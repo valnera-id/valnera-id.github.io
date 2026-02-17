@@ -6,137 +6,317 @@
   <title>Valnera Executive Learning Center</title>
 
   <style>
-    /* RESET AMAN (biar gambar ga tiba-tiba gede) */
-    * { box-sizing: border-box; }
-    img { max-width: 100%; height: auto; display: block; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
 
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      max-width: 980px;
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.6;
-      background: #fff;
-      color: #111;
-    }
-
-    /* HEADER / HERO */
-    .hero{
-      padding: 24px;
-      border: 1px solid #ddd;
-      border-radius: 14px;
-      background: #fff;
+    /* NAV */
+    .nav{
+      position:fixed; inset:0 0 auto 0;
+      height:72px;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 22px;
+      z-index:50;
+      background:linear-gradient(to bottom, rgba(0,0,0,.70), rgba(0,0,0,0));
     }
     .brand{
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      display:flex;align-items:center;gap:10px;
+      letter-spacing:.18em; text-transform:uppercase;
+      font-weight:800; font-size:12px;
+      white-space:nowrap;
+    }
+    .brand img{width:34px;height:34px;object-fit:contain}
+
+    .nav-links{
+      display:flex;gap:18px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      opacity:.92;
+    }
+    .nav-links a{padding:10px 4px; position:relative}
+    .nav-links a::after{
+      content:"";
+      position:absolute; left:4px; right:4px; bottom:4px;
+      height:1px; background:#fff;
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .2s ease;
+      opacity:.85;
+    }
+    .nav-links a:hover::after{transform:scaleX(1)}
+
+    .btn-outline{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.85);
+      border-radius:2px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      background:transparent;
+      transition:background .2s ease, color .2s ease, border-color .2s ease;
+      white-space:nowrap;
+    }
+    .btn-outline:hover{background:#fff;color:#000;border-color:#fff}
+
+    .burger{
+      display:none;
+      width:42px;height:42px;border:1px solid rgba(255,255,255,.25);
+      border-radius:4px; background:transparent;
+      color:#fff;
+      align-items:center;justify-content:center;
+      cursor:pointer;
+      margin-left:10px;
     }
 
-    /* LOGO DIKUNCI BIAR NORMAL */
-    .logo{
-      width: 64px;
-      height: 64px;
-      object-fit: contain;
-      border-radius: 12px;
-      border: 1px solid #eee;
-      background: #fff;
-      flex: 0 0 auto;
+    /* FULLSCREEN SECTIONS */
+    .section{
+      min-height:100vh;
+      display:flex;
+      align-items:flex-end;
+      padding:120px 22px 56px;
+      position:relative;
+      overflow:hidden;
     }
+    .bg{
+      position:absolute; inset:0;
+      background-size:cover;
+      background-position:center;
+      transform:scale(1.02);
+      filter:saturate(105%);
+    }
+    .overlay{
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.18) 55%, rgba(0,0,0,.06) 100%);
+    }
+    .content{
+      position:relative;
+      max-width:980px;
+      width:100%;
+      margin:0 auto;
+    }
+    .kicker{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.9;
+      margin-bottom:10px;
+    }
+    .title{
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.02em;
+      max-width:22ch;
+      margin-bottom:16px;
+      font-weight:900;
+    }
+    .desc{
+      max-width:70ch;
+      opacity:.9;
+      line-height:1.65;
+      margin-bottom:22px;
+      font-size:15px;
+    }
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
 
-    .brand-name{
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0;
+    .scroll-hint{
+      position:absolute;
+      left:50%; bottom:18px;
+      transform:translateX(-50%);
+      width:18px; height:30px;
+      border:1px solid rgba(255,255,255,.55);
+      border-radius:12px;
+      opacity:.8;
     }
-    .brand-tagline{
-      margin-top: 6px;
-      color: #555;
+    .scroll-hint::after{
+      content:"";
+      position:absolute; left:50%; top:6px;
+      width:2px; height:7px;
+      background:#fff;
+      transform:translateX(-50%);
+      animation:drop 1.2s infinite ease-in-out;
+      opacity:.85;
     }
-
-    .cta{ margin-top: 16px; }
-
-    /* BUTTON */
-    .btn{
-      display: inline-block;
-      padding: 10px 14px;
-      border: 1px solid #111;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #111;
+    @keyframes drop{
+      0%{transform:translate(-50%,0);opacity:.9}
+      70%{transform:translate(-50%,10px);opacity:.25}
+      100%{transform:translate(-50%,0);opacity:.9}
     }
-
-    /* SECTIONS */
-    section{
-      margin-top: 22px;
-      padding: 18px;
-      border: 1px solid #eee;
-      border-radius: 14px;
-      background: #fff;
-    }
-    h2{
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
-    ul{ margin: 8px 0 0 18px; }
 
     footer{
-      margin: 26px 0;
-      color: #666;
-      font-size: 14px;
+      padding:28px 22px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.65);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      display:flex;justify-content:center;gap:18px;flex-wrap:wrap;
+      background:#000;
+    }
+
+    @media (max-width: 920px){
+      .nav-links{display:none}
+      .burger{display:inline-flex}
+      .title{font-size:36px}
     }
   </style>
 </head>
 
 <body>
-  <header class="hero">
-    <div class="brand">
-      <img class="logo"
-           src="Black%20Lightning%20Icon%20Fitness%20Logo.jpg"
-           alt="Logo Valnera" />
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <!-- Logo kamu -->
+      <img src="Black%20Lightning%20Icon%20Fitness%20Logo.jpg" alt="Valnera Logo">
+      <span>Valnera</span>
+    </a>
 
-      <div>
-        <div class="brand-name">Ridho weding Organizet</div>
-        <div class="brand-tagline">
-          Kawinan kepuasan dan critan.
-        </div>
+    <div class="nav-links">
+      <a href="#ai-ppt">AI PowerPoint</a>
+      <a href="#powerbi">Power BI</a>
+      <a href="#excel">Excel</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a class="btn-outline" href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20pelatihan." target="_blank" rel="noopener">
+        Hubungi
+      </a>
+      <button class="burger" type="button" onclick="alert('Menu mobile bisa kita buat step berikutnya 😉')">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section" id="top">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="kicker">Pelatihan & Edukasi</div>
+      <div class="title">Upgrade skill kerja: cepat, praktis, terukur.</div>
+      <div class="desc">
+        Valnera Executive Learning Center menyediakan pelatihan modern untuk perusahaan, instansi, dan umum:
+        <strong>AI PowerPoint</strong>, <strong>Power BI</strong>, dan <strong>Excel</strong>.
+        Bisa in-house atau kelas publik.
+      </div>
+      <div class="actions">
+        <a class="btn-outline" href="#ai-ppt">Lihat Program</a>
+        <a class="btn-outline" href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20minta%20silabus%20dan%20biaya%20pelatihan." target="_blank" rel="noopener">
+          Minta Silabus
+        </a>
       </div>
     </div>
 
-    <div class="cta">
-      <a class="btn"
-         href="https://wa.me/6285179893852?text=Halo%20Valnera%20Executive%20Learning%20Center,%20saya%20ingin%20bertanya%20tentang%20program%20pelatihan."
-         target="_blank"
-         rel="noopener">Hubungi via WhatsApp</a>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <!-- AI POWERPOINT -->
+  <section class="section" id="ai-ppt">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="kicker">Program 01</div>
+      <div class="title">AI PowerPoint untuk presentasi yang “niat” dan cepat jadi.</div>
+      <div class="desc">
+        Belajar menyusun alur, struktur slide, copy yang tajam, dan memanfaatkan AI untuk mempercepat produksi materi.
+        Cocok untuk tim marketing, trainer, analis, dan eksekutif.
+      </div>
+      <div class="actions">
+        <a class="btn-outline" href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20info%20pelatihan%20AI%20PowerPoint." target="_blank" rel="noopener">
+          Konsultasi AI PowerPoint
+        </a>
+      </div>
     </div>
-  </header>
-
-  <section>
-    <h2>Tentang Kami</h2>
-    <p>
-      Ridhongo oragnizer berfokus pada pernikahan para janda
-    </p>
   </section>
 
-  <section>
-    <h2>Layanan</h2>
-    <ul>
-      <li>Corporate Training (Leadership / Soft Skills / Technical)</li>
-      <li>Konsultasi Pengembangan SDM & Kompetensi</li>
-      <li>Workshop & In-house Program sesuai kebutuhan perusahaan</li>
-    </ul>
+  <!-- POWER BI -->
+  <section class="section" id="powerbi">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="kicker">Program 02</div>
+      <div class="title">Power BI: dashboard yang rapi, insight yang kebaca.</div>
+      <div class="desc">
+        Dari data mentah sampai dashboard: modeling, DAX dasar, visual yang efektif, dan story telling data.
+        Fokus praktik dengan studi kasus kerja nyata.
+      </div>
+      <div class="actions">
+        <a class="btn-outline" href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20info%20pelatihan%20Power%20BI." target="_blank" rel="noopener">
+          Konsultasi Power BI
+        </a>
+      </div>
+    </div>
   </section>
 
-  <section id="kontak">
-    <h2>Kontak</h2>
-    <p><strong>WhatsApp:</strong> 6285179893852</p>
-    <p><strong>Email:</strong> Ridhongo@gmail.com</p>
-    <p><strong>Alamat:</strong> Baturaden</p>
+  <!-- EXCEL -->
+  <section class="section" id="excel">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="kicker">Program 03</div>
+      <div class="title">Excel: dari rapiin data sampai otomatisasi kerja.</div>
+      <div class="desc">
+        Materi bisa disesuaikan level: basic–advanced. Fokus produktivitas: formula penting, pivot, cleaning data,
+        dan template laporan yang siap pakai.
+      </div>
+      <div class="actions">
+        <a class="btn-outline" href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20info%20pelatihan%20Excel." target="_blank" rel="noopener">
+          Konsultasi Excel
+        </a>
+      </div>
+    </div>
   </section>
 
-  <footer>© <span id="y"></span> Valnera Executive Learning Center. All rights reserved.</footer>
+  <!-- TENTANG -->
+  <section class="section" id="tentang">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="kicker">Tentang Valnera</div>
+      <div class="title">Modern, minimal, dan fokus hasil.</div>
+      <div class="desc">
+        Metode belajar dibuat praktis dan terukur: materi ringkas, latihan langsung, dan output yang bisa dipakai kerja.
+        Program bisa in-house, online, atau kelas publik.
+      </div>
+      <div class="actions">
+        <a class="btn-outline" href="#kontak">Kontak</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section class="section" id="kontak">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80');"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <div class="kicker">Kontak</div>
+      <div class="title">Mau pelatihan untuk tim kamu?</div>
+      <div class="desc">
+        WhatsApp: <strong>6285179893852</strong><br/>
+        Email: <strong>isi-email@domain.com</strong><br/>
+        Kota: <strong>(isi kota)</strong>
+      </div>
+      <div class="actions">
+        <a class="btn-outline" href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20minta%20proposal%20pelatihan%20untuk%20perusahaan/instansi." target="_blank" rel="noopener">
+          Minta Proposal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="y"></span> Valnera</span>
+    <a href="#top">Back to top</a>
+  </footer>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
