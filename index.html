@@ -3,60 +3,144 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Valnera - Company Profile</title>
+  <title>Valnera Executive Learning Center</title>
+
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.6}
-    header{padding:24px;border:1px solid #ddd;border-radius:14px}
-    h1{margin:0 0 8px}
-    .btn{display:inline-block;margin-top:12px;padding:10px 14px;border:1px solid #111;border-radius:10px;text-decoration:none;color:#111}
-    section{margin-top:22px;padding:18px;border:1px solid #eee;border-radius:14px}
-    ul{margin:8px 0 0 18px}
-    footer{margin:26px 0;color:#666;font-size:14px}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.6;
+    }
+
+    /* HEADER / HERO */
+    .hero{
+      padding: 24px;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      background: #fff;
+    }
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo{
+      height: 64px;
+      width: 64px;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      background: #fff;
+    }
+    .brand-name{
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .brand-tagline{
+      margin-top: 6px;
+      color: #555;
+    }
+    .cta{
+      margin-top: 16px;
+    }
+
+    /* BUTTON */
+    .btn{
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border: 1px solid #111;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #111;
+    }
+
+    /* SECTIONS */
+    section{
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      background: #fff;
+    }
+    h2{
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    footer{
+      margin: 26px 0;
+      color: #666;
+      font-size: 14px;
+    }
   </style>
 </head>
+
 <body>
-<header class="hero">
-  <div class="brand">
-    <img class="logo" src="Black%20Lightning%20Icon%20Fitness%20Logo.jpg" alt="Logo Valnera">
-    <div>
-      <div class="brand-name">Valnera Executive Learning Center</div>
-      <div class="brand-tagline">Pelatihan, konsultasi, dan pengembangan kompetensi untuk profesional.</div>
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="brand">
+      <img class="logo"
+           src="Black%20Lightning%20Icon%20Fitness%20Logo.jpg"
+           alt="Logo Valnera" />
+
+      <div>
+        <div class="brand-name">Valnera Executive Learning Center</div>
+        <div class="brand-tagline">
+          Pelatihan, konsultasi, dan pengembangan kompetensi untuk profesional.
+          <!-- (UBAH INI) Tagline bebas -->
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="cta">
-    <a class="btn" href="https://wa.me/6285179893852" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
-  </div>
-</header>
-
-
-</header>
-
-
+    <div class="cta">
+      <a class="btn"
+         href="https://wa.me/6285179893852?text=Halo%20Valnera%20Executive%20Learning%20Center,%20saya%20ingin%20bertanya%20tentang%20program%20pelatihan."
+         target="_blank"
+         rel="noopener">Hubungi via WhatsApp</a>
+      <!-- (UBAH INI) Nomor & teks WA -->
+    </div>
   </header>
 
+  <!-- TENTANG -->
   <section>
     <h2>Tentang Kami</h2>
-    <p>PT Valnera berkomitmen memberikan layanan terbaik dengan standar profesional.</p>
+    <p>
+      Valnera Executive Learning Center berfokus pada pengembangan kapasitas individu dan organisasi melalui program pelatihan yang relevan, praktis, dan berbasis kebutuhan.
+      <!-- (UBAH INI) Profil singkat -->
+    </p>
   </section>
 
+  <!-- LAYANAN -->
   <section>
     <h2>Layanan</h2>
     <ul>
-      <li>Layanan 1 (isi nanti)</li>
-      <li>Layanan 2 (isi nanti)</li>
-      <li>Layanan 3 (isi nanti)</li>
+      <li>Corporate Training (Leadership / Soft Skills / Technical)</li>
+      <li>Konsultasi Pengembangan SDM & Kompetensi</li>
+      <li>Workshop & In-house Program sesuai kebutuhan perusahaan</li>
+      <!-- (UBAH INI) Sesuaikan layanan -->
     </ul>
   </section>
 
+  <!-- KONTAK -->
   <section id="kontak">
     <h2>Kontak</h2>
-    <p>Email: info@valnera-id.github.io (ganti dengan email kamu)</p>
-    <p>WhatsApp: 085179893852</p>
-    <p>Alamat: Jakarta Barat</p>
+    <p><strong>WhatsApp:</strong> 6285179893852</p>
+    <p><strong>Email:</strong> (UBAH INI) contoh: info@valnera.com</p>
+    <p><strong>Alamat:</strong> Jakarta Barat</p>
   </section>
 
-  <footer>© <span id="y"></span> PT Valnera. All rights reserved.</footer>
-  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+  <footer>© <span id="y"></span> Valnera Executive Learning Center. All rights reserved.</footer>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
