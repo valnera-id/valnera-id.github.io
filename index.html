@@ -50,11 +50,11 @@
     }
     .nav-item:hover > a::after{transform:scaleX(1)}
 
-    /* Desktop dropdown (menu variatif ala company profile) */
+    /* Desktop dropdown */
     .dropdown{
       position:absolute;
       top:44px; left:-8px;
-      min-width:260px;
+      min-width:270px;
       background:#0b0b0b;
       border:1px solid rgba(255,255,255,.10);
       border-radius:12px;
@@ -250,7 +250,7 @@
     .stat .num{font-size:28px; font-weight:900; letter-spacing:-.02em}
     .stat .lbl{font-size:11px; letter-spacing:.18em; text-transform:uppercase; opacity:.75; margin-top:6px}
 
-    /* Live card for ongoing webinar */
+    /* Live card */
     .card{
       margin-top:14px;
       border:1px solid rgba(255,255,255,.16);
@@ -289,40 +289,39 @@
 <body>
 
 <script>
-  /* ========= CONFIG (GANTI LINK DI SINI) ========= */
+  /* ========= LINK CONFIG ========= */
   const LINKS = {
     ai: {
-      webinar: "https://landingpage-ai-webinar.com",
-      premium: "https://landingpage-ai-premium.com",
-      privat: "https://landingpage-ai-privat.com"
+      webinar: "https://tribelio.page/aipowerpointmastery",
+      premium: "#",  // nanti ganti
+      privat: "#"    // nanti ganti
     },
     bi: {
-      webinar: "https://landingpage-bi-webinar.com",
-      premium: "https://landingpage-bi-premium.com",
-      privat: "https://landingpage-bi-privat.com"
+      webinar: "https://tribelio.page/powerbisales",
+      premium: "#",
+      privat: "#"
     },
     xl: {
-      webinar: "https://landingpage-xl-webinar.com",
-      premium: "https://landingpage-xl-premium.com",
-      privat: "https://landingpage-xl-privat.com"
+      webinar: "https://tribelio.page/vlookupmastery",
+      premium: "#",
+      privat: "#"
     },
-    produkLain: "https://landingpage-produk-lain.com"
+    produkLain: "#"
   };
 
-  /* Special Event ON/OFF */
+  /* Special Event */
   const SPECIAL_EVENT_ENABLED = false; // true kalau ada event besar
   const SPECIAL_EVENT = {
     name: "Special Workshop",
     date: "—",
     note: "Event terbatas. Hanya muncul saat ada workshop besar.",
-    link: "https://landingpage-event-kamu.com"
+    link: "#"
   };
 </script>
 
-  <!-- BACKDROP + DRAWER -->
   <div class="backdrop" onclick="closeMenu()"></div>
 
-  <!-- MOBILE MENU (bertahap: produk -> webinar/premium/private) -->
+  <!-- MOBILE MENU -->
   <aside class="drawer" aria-label="Mobile Menu">
     <div class="drawer-header">
       <div class="drawer-title">Menu Kelas</div>
@@ -360,7 +359,7 @@
       <summary>Company Profile <span class="chev">▾</span></summary>
       <div class="submenu">
         <a class="subitem" href="#who" onclick="closeMenu()">Who / What / Why <span class="tag">Profil</span></a>
-        <a class="subitem" href="#program-cards" onclick="closeMenu()">Program <span class="tag">Ringkas</span></a>
+        <a class="subitem" href="#stats" onclick="closeMenu()">Statistik <span class="tag">Impact</span></a>
         <a class="subitem" href="#updates" onclick="closeMenu()">Update <span class="tag">News</span></a>
       </div>
     </details>
@@ -382,7 +381,7 @@
     </div>
   </aside>
 
-  <!-- NAV (desktop: dropdown variatif + tetap minimal) -->
+  <!-- NAV DESKTOP -->
   <nav class="nav" id="top">
     <a class="brand" href="#top">
       <img src="Black%20Lightning%20Icon%20Fitness%20Logo.jpg" alt="Valnera Logo">
@@ -402,7 +401,7 @@
       <div class="nav-item">
         <a href="#program-cards">Program ▾</a>
         <div class="dropdown">
-          <div class="drop-title">3 Program Utama</div>
+          <div class="drop-title">3 Webinar Utama</div>
           <a class="drop-link" href="#ai-webinar">AI PowerPoint <span class="chip">webinar</span></a>
           <a class="drop-link" href="#bi-webinar">Power BI <span class="chip">webinar</span></a>
           <a class="drop-link" href="#xl-webinar">Excel <span class="chip">webinar</span></a>
@@ -433,7 +432,7 @@
     <div class="overlay"></div>
     <div class="content">
       <div class="kicker">Pelatihan & Edukasi</div>
-      <div class="title">Company profile yang rapi. Kelas yang gampang dipilih.</div>
+      <div class="title">Modern. Minimal. Fokus hasil.</div>
       <div class="desc">
         Tiga program utama: <strong>AI PowerPoint</strong>, <strong>Power BI</strong>, <strong>Excel</strong>.
         Jalur belajar: <strong>Webinar</strong> (reguler), <strong>Premium</strong> (intensif), <strong>Private</strong> (1-on-1).
@@ -451,14 +450,14 @@
     <div class="overlay"></div>
     <div class="content">
       <div class="kicker">Impact</div>
-      <div class="title">Angka singkat yang bikin percaya.</div>
-      <div class="desc">Isi sesuai data Valnera (boleh 3–4 angka aja). Pola “statistik” ini umum di company profile edukasi. :contentReference[oaicite:3]{index=3}</div>
+      <div class="title">Ringkas, tapi meyakinkan.</div>
+      <div class="desc">Data instansi bisa kamu isi kalau sudah ada angka pastinya.</div>
 
       <div class="stats">
-        <div class="stat"><div class="num">0+</div><div class="lbl">Peserta</div></div>
-        <div class="stat"><div class="num">0+</div><div class="lbl">Batch</div></div>
-        <div class="stat"><div class="num">0+</div><div class="lbl">Instansi</div></div>
-        <div class="stat"><div class="num">0</div><div class="lbl">Tahun</div></div>
+        <div class="stat"><div class="num">5000+</div><div class="lbl">Peserta</div></div>
+        <div class="stat"><div class="num">62+</div><div class="lbl">Batch</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">Tahun</div></div>
+        <div class="stat"><div class="num">—</div><div class="lbl">Instansi</div></div>
       </div>
     </div>
   </section>
@@ -478,7 +477,7 @@
         </div>
         <div class="tile span-4">
           <h3>What we do</h3>
-          <p>Webinar reguler + jalur Premium & Private untuk kebutuhan yang lebih spesifik.</p>
+          <p>Menyediakan kepelatihan dari yang basic hingga untuk kebutuhan yang lebih spesifik.</p>
         </div>
         <div class="tile span-4">
           <h3>Why us</h3>
@@ -488,14 +487,14 @@
     </div>
   </section>
 
-  <!-- PROGRAM CARDS (ekosistem ala company profile, tapi SpaceX look) -->
+  <!-- PROGRAM CARDS -->
   <section class="section" id="program-cards">
     <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80');"></div>
     <div class="overlay"></div>
     <div class="content">
       <div class="kicker">Program</div>
-      <div class="title">3 program utama.</div>
-      <div class="desc">Pola “kartu program/ekosistem” ini mirip yang kamu lihat di website referensi. :contentReference[oaicite:4]{index=4}</div>
+      <div class="title">3 webinar utama.</div>
+      <div class="desc">Setiap program punya jalur Premium & Private juga.</div>
 
       <div class="grid">
         <div class="tile span-4">
@@ -529,19 +528,16 @@
     <div class="overlay"></div>
     <div class="content">
       <div class="kicker">AI PowerPoint • Webinar</div>
-      <div class="title">Webinar AI PowerPoint</div>
-      <div class="desc">Kelas reguler berjadwal (online).</div>
+      <div class="title">AI PowerPoint Mastery</div>
+      <div class="desc">Webinar reguler (online).</div>
 
       <div class="card">
-        <div class="card-top"><div class="dot"></div><div class="card-title">Sedang berlangsung (Online)</div></div>
-        <p>
-          Mulai: <strong>1 Maret</strong> • Jadwal: <strong>(isi hari/jam)</strong><br/>
-          Topik: <strong>(isi materi)</strong> • Kuota: <strong>(isi kuota)</strong>
-        </p>
+        <div class="card-top"><div class="dot"></div><div class="card-title">Daftar kelas</div></div>
+        <p>Klik tombol di bawah untuk masuk ke landing page pendaftaran.</p>
         <div class="actions" style="margin-top:12px;">
           <a class="btn-outline" id="aiWebinarBtn" href="#" target="_blank" rel="noopener">Daftar Webinar</a>
-          <a class="btn-outline" href="#ai-premium">Lihat Premium</a>
-          <a class="btn-outline" href="#ai-privat">Lihat Private</a>
+          <a class="btn-outline" href="#ai-premium">Premium</a>
+          <a class="btn-outline" href="#ai-privat">Private</a>
         </div>
       </div>
     </div>
@@ -553,7 +549,7 @@
     <div class="content">
       <div class="kicker">AI PowerPoint • Premium</div>
       <div class="title">Premium Class AI PowerPoint</div>
-      <div class="desc">Intensif + tugas + feedback. Output: deck siap pakai.</div>
+      <div class="desc">Intensif + tugas + feedback. (Link akan kamu isi nanti)</div>
       <div class="actions">
         <a class="btn-outline" id="aiPremiumBtn" href="#" target="_blank" rel="noopener">Info & Daftar Premium</a>
       </div>
@@ -566,7 +562,7 @@
     <div class="content">
       <div class="kicker">AI PowerPoint • Private</div>
       <div class="title">Private Class AI PowerPoint</div>
-      <div class="desc">1-on-1, fokus kebutuhan kerja, jadwal fleksibel.</div>
+      <div class="desc">1-on-1, fokus kebutuhan kerja. (Link akan kamu isi nanti)</div>
       <div class="actions">
         <a class="btn-outline" id="aiPrivatBtn" href="#" target="_blank" rel="noopener">Info & Booking Private</a>
       </div>
@@ -579,19 +575,16 @@
     <div class="overlay"></div>
     <div class="content">
       <div class="kicker">Power BI • Webinar</div>
-      <div class="title">Webinar Power BI</div>
-      <div class="desc">Kelas reguler berjadwal (online).</div>
+      <div class="title">Power BI Sales</div>
+      <div class="desc">Webinar reguler (online).</div>
 
       <div class="card">
-        <div class="card-top"><div class="dot"></div><div class="card-title">Sedang berlangsung (Online)</div></div>
-        <p>
-          Mulai: <strong>(tanggal)</strong> • Jadwal: <strong>(isi hari/jam)</strong><br/>
-          Topik: <strong>(isi materi)</strong> • Kuota: <strong>(isi kuota)</strong>
-        </p>
+        <div class="card-top"><div class="dot"></div><div class="card-title">Daftar kelas</div></div>
+        <p>Klik tombol di bawah untuk masuk ke landing page pendaftaran.</p>
         <div class="actions" style="margin-top:12px;">
           <a class="btn-outline" id="biWebinarBtn" href="#" target="_blank" rel="noopener">Daftar Webinar</a>
-          <a class="btn-outline" href="#bi-premium">Lihat Premium</a>
-          <a class="btn-outline" href="#bi-privat">Lihat Private</a>
+          <a class="btn-outline" href="#bi-premium">Premium</a>
+          <a class="btn-outline" href="#bi-privat">Private</a>
         </div>
       </div>
     </div>
@@ -603,7 +596,7 @@
     <div class="content">
       <div class="kicker">Power BI • Premium</div>
       <div class="title">Premium Class Power BI</div>
-      <div class="desc">Intensif + proyek dashboard + review.</div>
+      <div class="desc">Intensif + proyek dashboard. (Link akan kamu isi nanti)</div>
       <div class="actions">
         <a class="btn-outline" id="biPremiumBtn" href="#" target="_blank" rel="noopener">Info & Daftar Premium</a>
       </div>
@@ -616,7 +609,7 @@
     <div class="content">
       <div class="kicker">Power BI • Private</div>
       <div class="title">Private Class Power BI</div>
-      <div class="desc">1-on-1, fokus dataset/needs kamu, jadwal fleksibel.</div>
+      <div class="desc">1-on-1, fokus dataset kamu. (Link akan kamu isi nanti)</div>
       <div class="actions">
         <a class="btn-outline" id="biPrivatBtn" href="#" target="_blank" rel="noopener">Info & Booking Private</a>
       </div>
@@ -629,19 +622,16 @@
     <div class="overlay"></div>
     <div class="content">
       <div class="kicker">Excel • Webinar</div>
-      <div class="title">Webinar Excel</div>
-      <div class="desc">Kelas reguler berjadwal (online).</div>
+      <div class="title">VLOOKUP Mastery</div>
+      <div class="desc">Webinar reguler (online).</div>
 
       <div class="card">
-        <div class="card-top"><div class="dot"></div><div class="card-title">Sedang berlangsung (Online)</div></div>
-        <p>
-          Mulai: <strong>(tanggal)</strong> • Jadwal: <strong>(isi hari/jam)</strong><br/>
-          Topik: <strong>(isi materi)</strong> • Kuota: <strong>(isi kuota)</strong>
-        </p>
+        <div class="card-top"><div class="dot"></div><div class="card-title">Daftar kelas</div></div>
+        <p>Klik tombol di bawah untuk masuk ke landing page pendaftaran.</p>
         <div class="actions" style="margin-top:12px;">
           <a class="btn-outline" id="xlWebinarBtn" href="#" target="_blank" rel="noopener">Daftar Webinar</a>
-          <a class="btn-outline" href="#xl-premium">Lihat Premium</a>
-          <a class="btn-outline" href="#xl-privat">Lihat Private</a>
+          <a class="btn-outline" href="#xl-premium">Premium</a>
+          <a class="btn-outline" href="#xl-privat">Private</a>
         </div>
       </div>
     </div>
@@ -653,7 +643,7 @@
     <div class="content">
       <div class="kicker">Excel • Premium</div>
       <div class="title">Premium Class Excel</div>
-      <div class="desc">Intensif + latihan kasus + template + review.</div>
+      <div class="desc">Intensif + template + review. (Link akan kamu isi nanti)</div>
       <div class="actions">
         <a class="btn-outline" id="xlPremiumBtn" href="#" target="_blank" rel="noopener">Info & Daftar Premium</a>
       </div>
@@ -666,21 +656,21 @@
     <div class="content">
       <div class="kicker">Excel • Private</div>
       <div class="title">Private Class Excel</div>
-      <div class="desc">1-on-1 sesuai kebutuhan kerja: laporan, template, otomatisasi.</div>
+      <div class="desc">1-on-1 sesuai kebutuhan kerja. (Link akan kamu isi nanti)</div>
       <div class="actions">
         <a class="btn-outline" id="xlPrivatBtn" href="#" target="_blank" rel="noopener">Info & Booking Private</a>
       </div>
     </div>
   </section>
 
-  <!-- UPDATES (Berita & Kegiatan ala company profile) -->
+  <!-- UPDATES -->
   <section class="section" id="updates">
     <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1800&q=80');"></div>
     <div class="overlay"></div>
     <div class="content">
       <div class="kicker">Berita & Kegiatan</div>
       <div class="title">Update singkat.</div>
-      <div class="desc">Kalau belum ada halaman berita, ini bisa jadi “teaser” yang link ke posting/IG/landing page.</div>
+      <div class="desc">Kalau belum punya halaman berita, isi 2 update aja dulu.</div>
 
       <div class="grid">
         <div class="tile span-6">
@@ -702,7 +692,7 @@
     <div class="content">
       <div class="kicker">Produk Lainnya</div>
       <div class="title">Program tambahan sesuai kebutuhan.</div>
-      <div class="desc">Bisa kamu arahkan ke landing page katalog program.</div>
+      <div class="desc">Kalau sudah ada link katalog/produk lain, taruh di sini.</div>
       <div class="actions">
         <a class="btn-outline" id="produkLainBtn" href="#" target="_blank" rel="noopener">Lihat Produk Lain</a>
       </div>
@@ -735,9 +725,9 @@
       <div class="kicker">Kontak</div>
       <div class="title">Konsultasi kebutuhan pelatihan</div>
       <div class="desc">
-        WhatsApp: <strong>6285179893852</strong><br/>
-        Email: <strong>(isi email)</strong><br/>
-        Kota: <strong>(isi kota)</strong>
+        WhatsApp: <strong>085179893852</strong><br/>
+        Email: <strong>Valnera.karyainovasi@outlook.co.id</strong><br/>
+        Kota: <strong>Jl.lapangan bola No 5D RT.07/RW.01,Kel.Kebon jeruk,Kec.kebon jeruk,Kota Jakarta Barat,Daerah Khusus Jakarta 11530</strong>
       </div>
       <div class="actions">
         <a class="btn-outline" href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20kelas%20webinar/premium/private." target="_blank" rel="noopener">Chat WA</a>
