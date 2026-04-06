@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PT Valnera Executive Learning Center</title>
-  <meta name="description" content="Valnera Executive Learning Center - pelatihan profesional berbasis data, teknologi, dan AI untuk individu dan organisasi." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valnera Executive Learning Center</title>
+  <meta name="description" content="Valnera Executive Learning Center - pelatihan profesional, data, AI, Power BI, Excel, dan corporate learning." />
 
+  <!-- FONT BRAND: MONTSERRAT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,15 +14,17 @@
   <style>
     :root{
       --primary:#262752;
-      --accent:#00917e;
+      --secondary:#00917e;
       --dark:#000000;
-      --text:#101010;
-      --muted:#5f6472;
-      --line:#e8ebf2;
-      --soft:#f6f8fb;
+      --ink:#0f172a;
+      --text:#1f2937;
+      --muted:#64748b;
+      --light:#f8fafc;
       --white:#ffffff;
+      --line:#e5e7eb;
+      --soft:#f3f4f6;
       --radius:22px;
-      --shadow:0 18px 60px rgba(20, 24, 40, .10);
+      --shadow:0 20px 60px rgba(38,39,82,.12);
       --container:1180px;
     }
 
@@ -32,69 +35,47 @@
       color:var(--text);
       background:var(--white);
       line-height:1.6;
+      overflow-x:hidden;
     }
-    img{max-width:100%;display:block}
+
     a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
     .container{width:min(var(--container), calc(100% - 40px));margin:0 auto}
-
-    /* background motif */
-    .wave{
-      position:absolute;
-      inset:auto 0 0 auto;
-      width:420px;
-      height:420px;
-      opacity:.08;
-      pointer-events:none;
-      background:
-        radial-gradient(circle at 20% 20%, transparent 0 58%, rgba(38,39,82,.8) 58.5% 59.5%, transparent 60%),
-        radial-gradient(circle at 28% 28%, transparent 0 63%, rgba(0,145,126,.7) 63.5% 64.5%, transparent 65%),
-        radial-gradient(circle at 36% 36%, transparent 0 68%, rgba(38,39,82,.7) 68.5% 69.5%, transparent 70%);
-      transform:rotate(18deg);
-    }
-
-    /* buttons */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:50px;
-      padding:0 22px;
-      border-radius:999px;
+    .section{padding:92px 0}
+    .eyebrow{
+      display:inline-block;
+      font-size:12px;
       font-weight:700;
-      font-size:14px;
-      letter-spacing:.02em;
-      transition:.25s ease;
-      border:1px solid transparent;
-      cursor:pointer;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--secondary);
+      margin-bottom:16px;
     }
-    .btn-primary{
-      background:linear-gradient(135deg, var(--primary), #31337a);
-      color:#fff;
-      box-shadow:0 10px 24px rgba(38,39,82,.22);
+    .section-title{
+      font-size:clamp(30px, 4vw, 54px);
+      line-height:1.08;
+      font-weight:800;
+      color:var(--ink);
+      margin-bottom:16px;
+      max-width:12ch;
     }
-    .btn-primary:hover{transform:translateY(-2px)}
-    .btn-outline{
-      border:1px solid rgba(38,39,82,.18);
-      color:var(--primary);
-      background:#fff;
-    }
-    .btn-outline:hover{
-      border-color:var(--primary);
-      background:#f8f9ff;
+    .section-desc{
+      max-width:760px;
+      color:var(--muted);
+      font-size:16px;
     }
 
-    /* nav */
-    .nav-wrap{
+    /* NAV */
+    .nav{
       position:sticky;
       top:0;
-      z-index:50;
-      backdrop-filter:blur(12px);
-      background:rgba(255,255,255,.86);
-      border-bottom:1px solid rgba(38,39,82,.08);
+      z-index:1000;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(229,231,235,.9);
     }
-    .nav{
-      height:82px;
+    .nav-inner{
+      height:84px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -104,866 +85,865 @@
       display:flex;
       align-items:center;
       gap:14px;
+      min-width:0;
+    }
+    .brand-logo{height:46px;width:auto;object-fit:contain}
+    .brand-text{display:flex;flex-direction:column;line-height:1.05}
+    .brand-name{
       font-weight:800;
+      letter-spacing:.08em;
       color:var(--primary);
-      letter-spacing:.04em;
+      font-size:22px;
     }
-    .brand img{
-      width:auto;
-      height:46px;
-      object-fit:contain;
-    }
-    .brand span{
-      font-size:15px;
+    .brand-sub{
+      font-size:10px;
+      letter-spacing:.18em;
       text-transform:uppercase;
-      white-space:nowrap;
+      color:var(--muted);
+      margin-top:4px;
     }
-    .menu{
+    .nav-menu{
       display:flex;
       align-items:center;
-      gap:26px;
-    }
-    .menu a{
+      gap:28px;
       font-size:14px;
-      font-weight:700;
-      color:#2f3553;
+      font-weight:600;
+      color:#334155;
     }
-    .menu a:hover{color:var(--accent)}
-    .nav-cta{
-      display:flex;
+    .nav-menu a:hover{color:var(--primary)}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+
+    .btn{
+      display:inline-flex;
       align-items:center;
-      gap:12px;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:0.05em;
+      transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
     }
-    .burger{
+    .btn-primary{
+      background:var(--primary);
+      color:var(--white);
+      box-shadow:0 12px 30px rgba(38,39,82,.22);
+    }
+    .btn-primary:hover{transform:translateY(-2px);background:#1e1f42}
+    .btn-secondary{
+      background:var(--secondary);
+      color:var(--white);
+      box-shadow:0 12px 28px rgba(0,145,126,.22);
+    }
+    .btn-secondary:hover{transform:translateY(-2px);background:#007d6d}
+    .btn-outline{
+      background:transparent;
+      color:var(--primary);
+      border-color:rgba(38,39,82,.2);
+    }
+    .btn-outline:hover{background:#f8f9ff;border-color:rgba(38,39,82,.35)}
+
+    .menu-toggle{
       display:none;
       border:none;
-      background:none;
+      background:transparent;
       font-size:28px;
       color:var(--primary);
       cursor:pointer;
     }
 
-    /* hero */
+    /* HERO */
     .hero{
       position:relative;
       overflow:hidden;
-      padding:86px 0 70px;
       background:
-        linear-gradient(135deg, #f8fbfd 0%, #eef3f8 100%);
+        radial-gradient(circle at top right, rgba(0,145,126,.12), transparent 28%),
+        linear-gradient(135deg, #f8fbff 0%, #eef3f8 42%, #ffffff 100%);
+      padding:70px 0 90px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      right:-140px;
+      top:-70px;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:rgba(38,39,82,.05);
+      filter:blur(4px);
     }
     .hero-grid{
+      position:relative;
+      z-index:1;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:48px;
+      grid-template-columns:1.12fr .88fr;
+      gap:46px;
       align-items:center;
     }
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(0,145,126,.10);
-      color:var(--accent);
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin-bottom:18px;
+    ..hero-copy h1{
+  font-size:clamp(42px, 5vw, 64px);
+  line-height:1.1;
+  letter-spacing:-0.5px;
+}
     }
-    .hero h1{
-      font-size:clamp(38px, 6vw, 68px);
-      line-height:1.02;
-      color:var(--primary);
-      font-weight:900;
-      letter-spacing:-.03em;
-      margin-bottom:20px;
-      max-width:11ch;
+    .hero-copy p{
+  font-size:16px;
+  line-height:1.7;
+  color:#475569;
+  max-width:600px;
+}
     }
-    .hero p{
-      font-size:17px;
-      color:#434960;
-      max-width:62ch;
-      margin-bottom:28px;
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-bottom:34px;
-    }
-    .hero-stats{
+    .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px}
+    .hero-metrics{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
+      grid-template-columns:repeat(3, minmax(0,1fr));
       gap:14px;
-      max-width:620px;
+      max-width:720px;
     }
-    .hero-stat{
-      padding:18px 18px 16px;
-      border:1px solid rgba(38,39,82,.08);
-      border-radius:18px;
-      background:rgba(255,255,255,.74);
+    .metric{
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(255,255,255,.92);
       box-shadow:var(--shadow);
+      padding:18px 20px;
+      border-radius:18px;
     }
-    .hero-stat strong{
-      display:block;
-      font-size:28px;
-      font-weight:900;
-      color:var(--primary);
-      line-height:1.1;
-      margin-bottom:6px;
-    }
-    .hero-stat span{
-      font-size:12px;
-      font-weight:700;
-      color:#6b7183;
-      text-transform:uppercase;
-      letter-spacing:.07em;
-    }
+    .metric strong{display:block;font-size:30px;color:var(--primary);font-weight:800;line-height:1}
+    .metric span{display:block;margin-top:8px;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:700}
 
     .hero-card{
       position:relative;
-      background:linear-gradient(180deg, var(--primary) 0%, #1d2048 100%);
-      color:#fff;
+      background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.88));
+      border:1px solid rgba(255,255,255,.95);
       border-radius:32px;
+      box-shadow:0 30px 80px rgba(15,23,42,.14);
       padding:28px;
-      box-shadow:0 30px 60px rgba(38,39,82,.20);
       overflow:hidden;
-      min-height:560px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
     }
-    .hero-card::before{
+    .hero-card::after{
       content:"";
       position:absolute;
-      inset:-20% -10% auto auto;
-      width:280px;
-      height:280px;
-      background:radial-gradient(circle, rgba(0,145,126,.28), transparent 65%);
+      inset:auto -40px -70px auto;
+      width:180px;
+      height:180px;
+      background:rgba(0,145,126,.12);
+      border-radius:50%;
     }
-    .hero-card-top{
+    .hero-logo-box{
+      background:linear-gradient(135deg, var(--primary), #1a4c6b 68%, var(--secondary));
+      border-radius:28px;
+      padding:38px 32px;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-logo-box::before,
+    .hero-logo-box::after{
+      content:"";
+      position:absolute;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+    }
+    .hero-logo-box::before{width:420px;height:420px;right:-160px;top:-170px}
+    .hero-logo-box::after{width:260px;height:260px;left:-120px;bottom:-90px}
+    .hero-logo-box img{
+      width:min(100%, 360px);
+      object-fit:contain;
+      filter:drop-shadow(0 10px 30px rgba(0,0,0,.18));
       position:relative;
       z-index:1;
     }
-    .hero-card .mini{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      opacity:.8;
-      margin-bottom:14px;
-      font-weight:700;
-    }
-    .hero-card h3{
-      font-size:32px;
-      line-height:1.15;
-      font-weight:800;
-      max-width:12ch;
-      margin-bottom:16px;
-    }
-    .hero-card p{
-      color:rgba(255,255,255,.84);
-      font-size:15px;
-      margin:0;
-      max-width:38ch;
-    }
-    .hero-badge{
-      position:relative;
-      z-index:1;
+    .hero-note{
+      margin-top:18px;
       display:grid;
       gap:14px;
-      margin-top:28px;
+      grid-template-columns:repeat(2, minmax(0,1fr));
     }
-    .hero-chip{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.10);
+    .note-item{
+      background:#f8fafc;
+      border:1px solid #e8edf4;
       border-radius:18px;
-      padding:16px 18px;
+      padding:18px;
     }
-    .hero-chip strong{
-      display:block;
-      font-size:14px;
-      margin-bottom:4px;
+    .note-item h4{font-size:14px;color:var(--primary);margin-bottom:6px}
+    .note-item p{font-size:13px;color:var(--muted)}
+
+    /* TRUST */
+    .trust{
+      background:var(--white);
+      padding:26px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
-    .hero-chip span{
+    .trust-row{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:24px;
+      align-items:center;
+    }
+    .trust-label{
       font-size:13px;
-      color:rgba(255,255,255,.75);
-    }
-
-    /* section general */
-    section{
-      position:relative;
-      padding:90px 0;
-    }
-    .section-head{
-      margin-bottom:34px;
-      max-width:760px;
-    }
-    .section-kicker{
-      color:var(--accent);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.12em;
       text-transform:uppercase;
-      margin-bottom:12px;
+      letter-spacing:.18em;
+      color:var(--muted);
+      font-weight:700;
     }
-    .section-title{
-      font-size:clamp(28px, 4.5vw, 48px);
-      line-height:1.08;
-      letter-spacing:-.03em;
+    .trust-list{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:12px;
+    }
+    .trust-item{
+      border:1px solid var(--line);
+      background:var(--light);
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
       color:var(--primary);
-      font-weight:900;
-      margin-bottom:14px;
-    }
-    .section-desc{
-      color:#556070;
-      font-size:17px;
-      max-width:68ch;
+      font-weight:700;
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    /* about */
-    .about{
-      background:#fff;
-    }
+    /* ABOUT */
     .about-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:24px;
+      gap:28px;
       align-items:start;
+      margin-top:30px;
     }
-    .card{
-      background:#fff;
+    .about-card,
+    .feature-card,
+    .program-card,
+    .proof-card,
+    .contact-card,
+    .cta-box{
+      background:var(--white);
       border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
-    .card h3{
-      color:var(--primary);
-      font-size:20px;
-      margin-bottom:10px;
-      font-weight:800;
+    .about-card{
+      padding:30px;
+      height:100%;
     }
-    .card p{
-      color:#586171;
-      font-size:15px;
+    .about-card h3{
+      font-size:22px;
+      color:var(--ink);
+      margin-bottom:12px;
     }
-    .pillars{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:22px;
-    }
-    .pillar{
-      padding:22px;
-      border-radius:22px;
+    .about-card p{color:var(--muted);font-size:15px}
+    .about-side{
+      background:linear-gradient(180deg, #f8fbff, #ffffff);
       border:1px solid var(--line);
-      background:var(--soft);
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow);
     }
-    .pillar .icon{
-      width:48px;
-      height:48px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      font-weight:800;
-      color:#fff;
-      background:linear-gradient(135deg, var(--primary), var(--accent));
-      margin-bottom:14px;
+    .about-side ul{display:grid;gap:16px;list-style:none}
+    .about-side li{
+      padding:16px 0;
+      border-bottom:1px dashed #d9e2ec;
     }
-    .pillar h4{
-      font-size:18px;
-      color:var(--primary);
-      margin-bottom:8px;
-    }
-    .pillar p{
-      color:#5c6473;
-      font-size:14px;
-    }
+    .about-side li:last-child{border-bottom:none;padding-bottom:0}
+    .about-side h4{font-size:18px;color:var(--primary);margin-bottom:6px}
+    .about-side p{font-size:15px;color:var(--muted)}
 
-    /* programs */
-    .programs{
-      background:linear-gradient(180deg, #fbfcfe 0%, #f5f8fc 100%);
-    }
+    /* PROGRAMS */
+    .programs{background:#f7fafc}
     .program-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3, minmax(0,1fr));
       gap:22px;
+      margin-top:30px;
     }
-    .program{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:26px;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      min-height:100%;
+    .program-card{
+      overflow:hidden;
+      transition:.25s ease;
     }
-    .program-tag{
+    .program-card:hover{transform:translateY(-6px)}
+    .program-top{
+      padding:24px 24px 14px;
+      background:linear-gradient(135deg, rgba(38,39,82,.05), rgba(0,145,126,.08));
+      border-bottom:1px solid var(--line);
+    }
+    .program-badge{
       display:inline-flex;
-      width:max-content;
-      padding:7px 12px;
+      padding:8px 12px;
       border-radius:999px;
       background:rgba(38,39,82,.08);
       color:var(--primary);
       font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.10em;
       font-weight:800;
-      margin-bottom:16px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:14px;
     }
-    .program h3{
-      font-size:26px;
+    .program-title{
+      font-size:24px;
       line-height:1.15;
-      color:var(--primary);
+      color:var(--ink);
       font-weight:800;
       margin-bottom:10px;
     }
-    .program p{
-      color:#5b6372;
-      font-size:15px;
-      margin-bottom:18px;
-    }
-    .program ul{
-      list-style:none;
-      display:grid;
-      gap:10px;
-      margin-bottom:22px;
-    }
-    .program ul li{
-      color:#465064;
-      font-size:14px;
-      padding-left:18px;
-      position:relative;
-    }
-    .program ul li::before{
+    .program-copy{padding:22px 24px 24px}
+    .program-copy p{color:var(--muted);font-size:15px;margin-bottom:18px}
+    .program-list{list-style:none;display:grid;gap:10px;margin-bottom:22px}
+    .program-list li{font-size:14px;color:#334155;padding-left:22px;position:relative}
+    .program-list li::before{
       content:"";
       position:absolute;
-      left:0;
-      top:9px;
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:var(--accent);
+      left:0;top:9px;
+      width:9px;height:9px;border-radius:50%;background:var(--secondary);
     }
-    .program .program-actions{
-      margin-top:auto;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
+    .program-actions{display:flex;flex-wrap:wrap;gap:10px}
 
-    /* identity */
-    .identity-grid{
+    /* WHY */
+    .why-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:24px;
-      align-items:start;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+      margin-top:30px;
     }
-    .identity-panel{
-      background:linear-gradient(180deg, var(--primary), #20224b);
-      color:#fff;
-      border-radius:30px;
-      padding:30px;
-      box-shadow:0 22px 56px rgba(38,39,82,.18);
+    .feature-card{padding:26px}
+    .feature-no{
+      width:48px;height:48px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(38,39,82,.08);
+      color:var(--primary);font-weight:800;margin-bottom:18px;
     }
-    .identity-list{
+    .feature-card h3{font-size:20px;color:var(--ink);margin-bottom:10px}
+    .feature-card p{font-size:15px;color:var(--muted)}
+
+    /* PROOF */
+    .proof{
+      background:linear-gradient(135deg, var(--primary) 0%, #1d3560 54%, #0f766e 100%);
+      color:var(--white);
+    }
+    .proof .section-title,.proof .section-desc{color:var(--white)}
+    .proof .eyebrow{color:#d4fff7}
+    .proof-grid{
       display:grid;
-      gap:16px;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+      margin-top:34px;
     }
-    .identity-item{
-      padding:18px 18px;
-      border-radius:20px;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.08);
+    .proof-card{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:none;
+      padding:26px;
+      color:var(--white);
+      backdrop-filter:blur(12px);
     }
-    .identity-item h4{
-      font-size:18px;
-      margin-bottom:6px;
-      font-weight:800;
-    }
-    .identity-item p{
-      color:rgba(255,255,255,.78);
-      font-size:14px;
-    }
-    .palette{
+    .proof-number{font-size:42px;font-weight:800;line-height:1;color:#ffffff;margin-bottom:10px}
+    .proof-label{font-size:12px;text-transform:uppercase;letter-spacing:.18em;opacity:.78;font-weight:700}
+
+    /* FLOW */
+    .flow-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:20px;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+      margin-top:30px;
     }
-    .swatch{
-      border-radius:22px;
-      overflow:hidden;
+    .flow-step{
+      background:linear-gradient(180deg,#fff,#f8fbff);
       border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
       box-shadow:var(--shadow);
-      background:#fff;
+      position:relative;
     }
-    .swatch-color{
-      height:120px;
+    .flow-step .step-num{
+      display:inline-flex;
+      width:42px;height:42px;border-radius:999px;
+      align-items:center;justify-content:center;
+      background:var(--secondary);color:var(--white);font-weight:800;margin-bottom:16px;
     }
-    .swatch-info{
-      padding:16px;
-    }
-    .swatch-info strong{
-      display:block;
-      color:var(--primary);
-      margin-bottom:4px;
-      font-size:15px;
-    }
-    .swatch-info span{
-      color:#667085;
-      font-size:13px;
-    }
+    .flow-step h3{font-size:20px;color:var(--ink);margin-bottom:10px}
+    .flow-step p{font-size:15px;color:var(--muted)}
 
     /* CTA */
-    .cta{
-      background:
-        linear-gradient(135deg, var(--primary) 0%, #1a1d45 100%);
-      color:#fff;
-      overflow:hidden;
-    }
     .cta-box{
-      position:relative;
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:32px;
-      padding:40px;
-      background:rgba(255,255,255,.04);
+      background:linear-gradient(135deg, #f8fbff, #ffffff);
+      padding:34px;
+      margin-top:34px;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:24px;
+      grid-template-columns:1fr auto;
+      gap:20px;
       align-items:center;
     }
-    .cta-box::after{
-      content:"";
-      position:absolute;
-      right:-40px;
-      bottom:-40px;
-      width:220px;
-      height:220px;
-      border-radius:999px;
-      background:radial-gradient(circle, rgba(0,145,126,.35), transparent 70%);
-    }
-    .cta h2{
-      font-size:clamp(28px, 4vw, 46px);
-      line-height:1.08;
-      font-weight:900;
-      margin-bottom:14px;
-    }
-    .cta p{
-      color:rgba(255,255,255,.82);
-      font-size:16px;
-      max-width:58ch;
-    }
-    .cta-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:flex-start;
-    }
-    .btn-light{
-      background:#fff;
-      color:var(--primary);
-      font-weight:800;
-    }
-    .btn-ghost{
-      border:1px solid rgba(255,255,255,.20);
-      color:#fff;
-      background:transparent;
-    }
+    .cta-box h3{font-size:28px;color:var(--ink);margin-bottom:10px}
+    .cta-box p{color:var(--muted)}
 
-    /* footer */
-    footer{
-      padding:26px 0 40px;
-      background:#fff;
-      border-top:1px solid var(--line);
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      margin-top:30px;
     }
+    .contact-card{padding:30px}
+    .contact-card h3{font-size:22px;color:var(--ink);margin-bottom:12px}
+    .contact-card p{color:var(--muted);margin-bottom:14px}
+    .contact-list{list-style:none;display:grid;gap:16px;margin-top:12px}
+    .contact-list li{
+      padding:16px 18px;
+      border-radius:18px;
+      background:#f8fafc;
+      border:1px solid #e8edf4;
+      font-size:15px;
+    }
+    .contact-list strong{display:block;color:var(--primary);margin-bottom:4px}
+
+    /* FOOTER */
     .footer{
+      background:#0b1020;
+      color:rgba(255,255,255,.76);
+      padding:26px 0;
+    }
+    .footer-row{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:18px;
       flex-wrap:wrap;
-    }
-    .footer small{
-      color:#6a7282;
-      font-size:13px;
-    }
-    .footer-links{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-    .footer-links a{
-      color:#4b5466;
       font-size:14px;
-      font-weight:600;
     }
+    .footer a:hover{color:#ffffff}
 
-    /* responsive */
+    /* MOBILE */
     @media (max-width: 1080px){
-      .hero-grid,
-      .about-grid,
-      .identity-grid,
-      .cta-box{
-        grid-template-columns:1fr;
-      }
-      .program-grid{
-        grid-template-columns:1fr 1fr;
-      }
-      .pillars{
-        grid-template-columns:1fr;
-      }
+      .hero-grid,.about-grid,.contact-grid,.trust-row,.cta-box{grid-template-columns:1fr}
+      .program-grid,.why-grid,.proof-grid,.flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .trust-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .cta-box{padding:28px}
     }
 
-    @media (max-width: 760px){
-      .menu,
-      .nav-cta .btn{
+    @media (max-width: 860px){
+      .nav-menu,.nav-actions .btn-outline,.nav-actions .btn-primary{display:none}
+      .menu-toggle{display:block}
+      .nav.open .nav-panel{display:flex}
+      .nav-panel{
         display:none;
+        position:absolute;
+        left:20px;right:20px;top:88px;
+        background:#ffffff;
+        border:1px solid var(--line);
+        border-radius:22px;
+        box-shadow:var(--shadow);
+        padding:18px;
+        flex-direction:column;
+        gap:12px;
       }
-      .burger{display:block}
-      .hero{padding:54px 0 56px}
-      .hero-stats{
-        grid-template-columns:1fr;
-      }
-      .program-grid,
-      .palette{
-        grid-template-columns:1fr;
-      }
-      .nav{
-        height:74px;
-      }
-      .brand img{height:40px}
-      .brand span{font-size:13px}
-      section{padding:72px 0}
-      .card,
-      .program,
-      .identity-panel,
-      .cta-box{
-        padding:22px;
-      }
+      .nav-panel a{padding:12px 8px;font-weight:600;color:#334155}
+      .nav-panel .btn{width:100%;margin-top:6px}
+      .hero-note,
+      .program-grid,.why-grid,.proof-grid,.flow-grid,.hero-metrics{grid-template-columns:1fr}
+      .section{padding:78px 0}
+      .hero{padding:38px 0 74px}
+      .hero-card{padding:18px}
+      .hero-logo-box{min-height:240px;padding:28px}
+      ..brand-name{
+  font-size:20px;
+  letter-spacing:0.12em;
+}
+      .brand-sub{display:none}
     }
   </style>
 </head>
 <body>
+  <!-- =======================
+       EDIT MUDAH
+       1. Ganti logo file di bawah sesuai nama file repo kamu
+       2. Ganti semua link # dengan link asli
+       3. Ganti teks placeholder sesuai kebutuhan
+       4. Ganti statistik, alamat, email, WA, dan CTA
+     ======================= -->
 
-  <header class="nav-wrap">
-    <div class="container nav">
+  <nav class="nav" id="topNav">
+    <div class="container nav-inner">
       <a href="#top" class="brand">
-        <img src="Deal-Logo-Valnera-Icon-Atas.jpg" alt="Logo Valnera">
-        <span>Pt Valnera</span>
+        <img src="Deal-Logo-Valnera-Icon-Atas.jpg" alt="Logo Valnera" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">VALNERA</span>
+          <span class="brand-sub">Executive Learning Center</span>
+        </div>
       </a>
 
-      <nav class="menu">
-        <a href="#tentang">Tentang</a>
-        <a href="#program">Program</a>
-        <a href="#identitas">Identitas Brand</a>
-        <a href="#kontak">Kontak</a>
-      </nav>
+      <div class="nav-menu">
+        <a href="#about">Tentang</a>
+        <a href="#programs">Program</a>
+        <a href="#why">Keunggulan</a>
+        <a href="#proof">Profil</a>
+        <a href="#contact">Kontak</a>
+      </div>
 
-      <div class="nav-cta">
-        <a href="https://wa.me/6285179893852" target="_blank" class="btn btn-outline">Hubungi</a>
-        <button class="burger" onclick="toggleMenu()">☰</button>
+      <div class="nav-actions">
+        <a href="#programs" class="btn btn-outline">Lihat Program</a>
+        <a href="https://wa.me/6285179893852" target="_blank" class="btn btn-primary">Hubungi</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+
+    <div class="container nav-panel" id="mobilePanel">
+      <a href="#about">Tentang</a>
+      <a href="#programs">Program</a>
+      <a href="#why">Keunggulan</a>
+      <a href="#proof">Profil</a>
+      <a href="#contact">Kontak</a>
+      <a href="https://wa.me/6285179893852" target="_blank" class="btn btn-primary">Hubungi via WhatsApp</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Valnera Executive Learning Center</span>
+        <h1>Mengubah skill teknis menjadi kapabilitas strategis.</h1>
+        <p>
+          Valnera hadir untuk membantu profesional, organisasi, dan institusi mengembangkan kompetensi yang relevan di era data, teknologi, dan AI melalui pembelajaran yang modern, terstruktur, dan berdampak.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#programs" class="btn btn-primary">Telusuri Program</a>
+          <a href="#contact" class="btn btn-outline">Konsultasi Kebutuhan</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric">
+            <strong>5000+</strong>
+            <span>Peserta Belajar</span>
+          </div>
+          <div class="metric">
+            <strong>62+</strong>
+            <span>Batch Program</span>
+          </div>
+          <div class="metric">
+            <strong>2+</strong>
+            <span>Tahun Pertumbuhan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-logo-box">
+          <img src="Deal-Logo-Valnera-Icon-Atas.jpg" alt="Valnera Brand Identity">
+        </div>
+
+        <div class="hero-note">
+          <div class="note-item">
+            <h4>Corporate Learning</h4>
+            <p>Program pelatihan yang dapat disesuaikan dengan kebutuhan tim dan institusi.</p>
+          </div>
+          <div class="note-item">
+            <h4>Modern Skill Transformation</h4>
+            <p>Fokus pada hasil nyata, pengambilan keputusan, dan peningkatan kapabilitas kerja.</p>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wave"></div>
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Executive Learning Center</div>
-          <h1>Belajar strategis untuk era data dan AI.</h1>
+  <section class="trust">
+    <div class="container trust-row">
+      <div class="trust-label">Bidang Fokus Utama</div>
+      <div class="trust-list">
+        <div class="trust-item">AI PowerPoint</div>
+        <div class="trust-item">Power BI</div>
+        <div class="trust-item">Excel</div>
+        <div class="trust-item">Corporate Training</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <span class="eyebrow">Brand Introduction</span>
+      <h2 class="section-title">Tentang Valnera</h2>
+      <p class="section-desc">
+        Valnera adalah brand edukasi dan pengembangan profesional yang berfokus pada transformasi skill menjadi nilai strategis. Kami membantu individu dan organisasi melampaui kemampuan teknis menuju kapabilitas yang berdampak nyata dalam pengambilan keputusan dan pertumbuhan bisnis.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Modern, Strategic, Relevant</h3>
           <p>
-            Valnera membantu individu dan organisasi mentransformasikan skill teknis menjadi
-            kapabilitas yang relevan, terukur, dan berdampak nyata bagi kinerja serta pertumbuhan.
+            Dengan pendekatan yang modern, berbasis data, dan relevan dengan kebutuhan industri, Valnera menempatkan pembelajaran sebagai investasi strategis. Setiap program disusun agar peserta tidak hanya memahami tools, tetapi juga mampu menggunakannya untuk menciptakan dampak kerja yang jelas.
           </p>
-
-          <div class="hero-actions">
-            <a href="#program" class="btn btn-primary">Lihat Program</a>
-            <a href="#tentang" class="btn btn-outline">Tentang Valnera</a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <strong>5000+</strong>
-              <span>Peserta</span>
-            </div>
-            <div class="hero-stat">
-              <strong>62+</strong>
-              <span>Batch</span>
-            </div>
-            <div class="hero-stat">
-              <strong>2+</strong>
-              <span>Tahun</span>
-            </div>
-          </div>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <div class="mini">Brand Message</div>
-            <h3>Pembelajaran sebagai investasi strategis.</h3>
-            <p>
-              Dirancang untuk profesional, organisasi, dan institusi yang ingin meningkatkan
-              kualitas keputusan, produktivitas, dan kesiapan di era modern.
-            </p>
-          </div>
-
-          <div class="hero-badge">
-            <div class="hero-chip">
-              <strong>AI PowerPoint</strong>
-              <span>Presentasi berbasis AI yang lebih cepat, rapi, dan bernilai.</span>
-            </div>
-            <div class="hero-chip">
-              <strong>Power BI</strong>
-              <span>Dashboard, analisis data, dan pengambilan keputusan yang lebih presisi.</span>
-            </div>
-            <div class="hero-chip">
-              <strong>Excel</strong>
-              <span>Produktivitas kerja, formula, automasi, dan pengolahan data praktis.</span>
-            </div>
-          </div>
+        <div class="about-side">
+          <ul>
+            <li>
+              <h4>Brand Positioning</h4>
+              <p>Lembaga edukasi eksekutif profesional yang membantu transformasi skill teknis menjadi kapabilitas strategis.</p>
+            </li>
+            <li>
+              <h4>Brand Personality</h4>
+              <p>Profesional, tenang, strategis, kredibel, dan berorientasi pada dampak jangka panjang.</p>
+            </li>
+            <li>
+              <h4>Target Market</h4>
+              <p>Profesional, supervisor, manager, analyst, consultant, serta organisasi yang fokus pada pengembangan SDM.</p>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="about" id="tentang">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Tentang Valnera</div>
-          <h2 class="section-title">Lembaga pelatihan profesional dengan pendekatan modern dan relevan.</h2>
-          <p class="section-desc">
-            Valnera hadir sebagai mitra pembelajaran untuk individu dan organisasi yang ingin
-            mengembangkan kapabilitas strategis di bidang data, teknologi, dan AI.
-          </p>
-        </div>
+  <section class="section programs" id="programs">
+    <div class="container">
+      <span class="eyebrow">Main Programs</span>
+      <h2 class="section-title">Program unggulan Valnera</h2>
+      <p class="section-desc">
+        Template ini sudah disusun agar kamu tinggal mengganti deskripsi, link pendaftaran, jadwal batch, atau nama kelas sesuai kebutuhan bisnis Valnera.
+      </p>
 
-        <div class="about-grid">
-          <div class="card">
-            <h3>Who We Are</h3>
-            <p>
-              Valnera adalah brand edukasi dan pengembangan profesional yang berfokus pada transformasi
-              skill menjadi nilai strategis bagi karier, tim, dan organisasi.
-            </p>
+      <div class="program-grid">
+        <article class="program-card">
+          <div class="program-top">
+            <span class="program-badge">Program 01</span>
+            <h3 class="program-title">AI PowerPoint</h3>
           </div>
-
-          <div class="card">
-            <h3>What We Do</h3>
-            <p>
-              Kami menyediakan program pelatihan yang dirancang praktis, terstruktur, dan sesuai kebutuhan
-              industri, mulai dari pemahaman dasar hingga penerapan yang lebih spesifik.
-            </p>
-          </div>
-        </div>
-
-        <div class="pillars">
-          <div class="pillar">
-            <div class="icon">01</div>
-            <h4>Professional</h4>
-            <p>Komunikasi, materi, dan tampilan yang kredibel untuk audiens profesional dan institusi.</p>
-          </div>
-          <div class="pillar">
-            <div class="icon">02</div>
-            <h4>Strategic</h4>
-            <p>Fokus pada dampak, pengambilan keputusan, dan nilai jangka panjang, bukan sekadar teknis.</p>
-          </div>
-          <div class="pillar">
-            <div class="icon">03</div>
-            <h4>Relevant</h4>
-            <p>Topik disusun sesuai tantangan aktual di era data, digital, dan AI.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="programs" id="program">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Program Utama</div>
-          <h2 class="section-title">Tiga program inti yang bisa kamu kembangkan lagi sesuai alur bisnis.</h2>
-          <p class="section-desc">
-            Bagian ini sudah disusun sebagai template. Nanti kamu tinggal ubah judul, deskripsi, link, batch,
-            dan penawaran kelas webinar, premium, atau private.
-          </p>
-        </div>
-
-        <div class="program-grid">
-          <article class="program">
-            <span class="program-tag">Program 01</span>
-            <h3>AI PowerPoint</h3>
-            <p>Pelatihan presentasi modern dengan bantuan AI untuk mempercepat ide, struktur, dan output visual.</p>
-            <ul>
+          <div class="program-copy">
+            <p>Program untuk mempercepat pembuatan presentasi yang lebih strategis, efisien, dan relevan dengan kebutuhan profesional modern.</p>
+            <ul class="program-list">
               <li>Webinar reguler</li>
               <li>Premium class intensif</li>
-              <li>Private class sesuai kebutuhan</li>
+              <li>Private class 1-on-1</li>
             </ul>
             <div class="program-actions">
-              <a href="#" class="btn btn-primary">Daftar Webinar</a>
-              <a href="#" class="btn btn-outline">Lihat Detail</a>
+              <a href="#" class="btn btn-primary">Lihat Detail</a>
+              <a href="#contact" class="btn btn-outline">Konsultasi</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="program">
-            <span class="program-tag">Program 02</span>
-            <h3>Power BI</h3>
-            <p>Pelatihan analisis dan visualisasi data untuk membantu keputusan yang lebih cepat dan terukur.</p>
-            <ul>
-              <li>Dashboard & reporting</li>
+        <article class="program-card">
+          <div class="program-top">
+            <span class="program-badge">Program 02</span>
+            <h3 class="program-title">Power BI</h3>
+          </div>
+          <div class="program-copy">
+            <p>Program untuk membangun kemampuan analisis, visualisasi data, dan dashboard yang mendukung insight dan pengambilan keputusan.</p>
+            <ul class="program-list">
+              <li>Dashboard thinking</li>
               <li>DAX dan data modeling</li>
-              <li>Penerapan untuk bisnis</li>
+              <li>Corporate learning path</li>
             </ul>
             <div class="program-actions">
-              <a href="#" class="btn btn-primary">Daftar Webinar</a>
-              <a href="#" class="btn btn-outline">Lihat Detail</a>
+              <a href="#" class="btn btn-primary">Lihat Detail</a>
+              <a href="#contact" class="btn btn-outline">Konsultasi</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="program">
-            <span class="program-tag">Program 03</span>
-            <h3>Excel</h3>
-            <p>Program produktivitas kerja untuk pengolahan data, formula, reporting, dan efisiensi operasional.</p>
-            <ul>
-              <li>Formula & fungsi kerja</li>
-              <li>Data cleaning & pivot</li>
-              <li>Template dan studi kasus</li>
+        <article class="program-card">
+          <div class="program-top">
+            <span class="program-badge">Program 03</span>
+            <h3 class="program-title">Excel</h3>
+          </div>
+          <div class="program-copy">
+            <p>Program yang dirancang untuk meningkatkan produktivitas kerja melalui formula, pengolahan data, otomatisasi, dan analisis yang praktis.</p>
+            <ul class="program-list">
+              <li>Formula & function mastery</li>
+              <li>Data cleaning & reporting</li>
+              <li>Kelas private & premium</li>
             </ul>
             <div class="program-actions">
-              <a href="#" class="btn btn-primary">Daftar Webinar</a>
-              <a href="#" class="btn btn-outline">Lihat Detail</a>
+              <a href="#" class="btn btn-primary">Lihat Detail</a>
+              <a href="#contact" class="btn btn-outline">Konsultasi</a>
             </div>
-          </article>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container">
+      <span class="eyebrow">Why Valnera</span>
+      <h2 class="section-title">Mengapa Valnera</h2>
+      <p class="section-desc">
+        Website ini dibuat mengikuti nuansa visual yang profesional, tegas, dan elegan agar selaras dengan positioning brand Valnera sebagai mitra edukasi eksekutif.
+      </p>
+
+      <div class="why-grid">
+        <div class="feature-card">
+          <div class="feature-no">01</div>
+          <h3>Profesional</h3>
+          <p>Penyampaian materi dan komunikasi diarahkan untuk kebutuhan profesional dan organisasi.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-no">02</div>
+          <h3>Konsisten</h3>
+          <p>Struktur visual, tone brand, dan alur halaman dibuat seragam agar mudah dikembangkan ke depan.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-no">03</div>
+          <h3>Strategis</h3>
+          <p>Fokus bukan hanya pada tools, tetapi pada manfaat nyata untuk keputusan kerja dan pertumbuhan.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-no">04</div>
+          <h3>Insightful</h3>
+          <p>Setiap bagian website mendorong citra brand yang jelas, kredibel, dan bernilai tinggi.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="identitas">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Brand Identity</div>
-          <h2 class="section-title">Website disusun mengikuti arah visual dan komunikasi brand VALNERA.</h2>
-          <p class="section-desc">
-            Template ini dibuat agar tone website terasa lebih bersih, eksekutif, modern, dan konsisten dengan identitas visual.
+  <section class="section proof" id="proof">
+    <div class="container">
+      <span class="eyebrow">Company Profile Snapshot</span>
+      <h2 class="section-title">Profil singkat yang mudah dipercaya</h2>
+      <p class="section-desc">
+        Kamu bisa mengganti angka dan deskripsi di bawah ini sesuai data aktual perusahaan, batch, instansi, atau jumlah alumni yang sudah tersedia.
+      </p>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-number">5000+</div>
+          <div class="proof-label">Member / peserta</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-number">62+</div>
+          <div class="proof-label">Batch pelatihan</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-number">2+</div>
+          <div class="proof-label">Tahun pertumbuhan</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-number">B2B</div>
+          <div class="proof-label">Corporate & institusi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="flow">
+    <div class="container">
+      <span class="eyebrow">Simple Website Flow</span>
+      <h2 class="section-title">Alur penataan yang gampang kamu edit</h2>
+      <p class="section-desc">
+        Supaya ke depan kamu mudah menambahkan konten, halaman ini disusun dengan urutan yang jelas: pengenalan brand, program, keunggulan, bukti sosial, lalu ajakan konsultasi.
+      </p>
+
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <h3>Hero</h3>
+          <p>Bagian pembuka untuk membangun kesan pertama, value utama, dan CTA.</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <h3>About</h3>
+          <p>Menjelaskan siapa Valnera, positioning, dan target market.</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <h3>Programs</h3>
+          <p>Menampilkan produk atau layanan utama yang menjadi fokus bisnis.</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <h3>CTA</h3>
+          <p>Mengarahkan pengunjung untuk konsultasi, bertanya, atau mendaftar kelas.</p>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <div>
+          <h3>Siap menyesuaikan halaman ini dengan program Valnera?</h3>
+          <p>Template ini sudah siap dipakai sebagai dasar website utama. Kamu tinggal mengganti copywriting, link, statistik, dan gambar tambahan sesuai kebutuhan bisnis.</p>
+        </div>
+        <a href="#contact" class="btn btn-secondary">Mulai Edit Konten</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">Konsultasi kebutuhan pelatihan</h2>
+      <p class="section-desc">
+        Bagian ini bisa kamu pakai untuk WhatsApp, email, alamat kantor, atau form inquiry. Saat ini saya buat sederhana supaya mudah diubah.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Hubungi Valnera</h3>
+          <p>Silakan ganti seluruh data kontak di bawah ini dengan data final perusahaan.</p>
+
+          <ul class="contact-list">
+            <li>
+              <strong>WhatsApp</strong>
+              085179893852
+            </li>
+            <li>
+              <strong>Email</strong>
+              valnera.karyainovasi@outlook.co.id
+            </li>
+            <li>
+              <strong>Alamat</strong>
+              Jl. Lapangan Bola No 5D RT.07/RW.01, Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat 11530
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-card">
+          <h3>Call to Action</h3>
+          <p>
+            Kamu bisa mengganti blok ini menjadi formulir, CTA pendaftaran webinar, CTA corporate training, atau daftar layanan premium/private class.
           </p>
-        </div>
-
-        <div class="identity-grid">
-          <div class="identity-panel">
-            <div class="identity-list">
-              <div class="identity-item">
-                <h4>Brand Positioning</h4>
-                <p>Valnera diposisikan sebagai mitra edukasi eksekutif yang membantu transformasi skill menjadi kapabilitas strategis.</p>
-              </div>
-              <div class="identity-item">
-                <h4>Brand Personality</h4>
-                <p>Kompeten, strategis, tenang, dan terpercaya. Nada komunikasi difokuskan pada insight dan dampak jangka panjang.</p>
-              </div>
-              <div class="identity-item">
-                <h4>Target Market</h4>
-                <p>Profesional, supervisor, manager, analyst, consultant, serta organisasi dan institusi yang berfokus pada pengembangan SDM.</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card">
-              <h3>Color Palette</h3>
-              <p>Gunakan warna ini secara konsisten untuk menjaga identitas visual website tetap kuat dan elegan.</p>
-
-              <div class="palette">
-                <div class="swatch">
-                  <div class="swatch-color" style="background:#262752;"></div>
-                  <div class="swatch-info">
-                    <strong>Primary</strong>
-                    <span>#262752</span>
-                  </div>
-                </div>
-                <div class="swatch">
-                  <div class="swatch-color" style="background:#00917e;"></div>
-                  <div class="swatch-info">
-                    <strong>Accent</strong>
-                    <span>#00917e</span>
-                  </div>
-                </div>
-                <div class="swatch">
-                  <div class="swatch-color" style="background:#000000;"></div>
-                  <div class="swatch-info">
-                    <strong>Neutral Dark</strong>
-                    <span>#000000</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card" style="margin-top:20px;">
-              <h3>Typography</h3>
-              <p>
-                Gunakan <strong>Montserrat</strong> untuk headline, body text, dan elemen tombol agar tampilan tetap profesional,
-                rapi, dan konsisten di seluruh halaman.
-              </p>
-            </div>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;">
+            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20pelatihan." target="_blank" class="btn btn-primary">Chat WhatsApp</a>
+            <a href="#programs" class="btn btn-outline">Lihat Program</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="cta" id="kontak">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>Siap menyesuaikan halaman ini dengan program, batch, dan kebutuhan bisnis VALNERA.</h2>
-            <p>
-              Kamu bisa ganti isi kontak, daftar program, update batch, link webinar, premium class,
-              private class, dan section tambahan seperti testimoni, FAQ, atau galeri dokumentasi.
-            </p>
-          </div>
-
-          <div class="cta-actions">
-            <a href="https://wa.me/6285179893852" target="_blank" class="btn btn-light">Hubungi via WhatsApp</a>
-            <a href="mailto:Valnera.karyainovasi@outlook.co.id" class="btn btn-ghost">Kirim Email</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer">
-      <small>© <span id="year"></span> Valnera Executive Learning Center. All rights reserved.</small>
-      <div class="footer-links">
-        <a href="#tentang">Tentang</a>
-        <a href="#program">Program</a>
-        <a href="#identitas">Brand</a>
-        <a href="#kontak">Kontak</a>
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Valnera Executive Learning Center. All rights reserved.</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;">
+        <a href="#top">Kembali ke atas</a>
+        <a href="#about">Tentang</a>
+        <a href="#programs">Program</a>
+        <a href="#contact">Kontak</a>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    function toggleMenu(){
-      const menu = document.querySelector(".menu");
-      const cta = document.querySelector(".nav-cta .btn");
-      if(window.innerWidth <= 760){
-        const isOpen = menu.style.display === "flex";
-        menu.style.display = isOpen ? "none" : "flex";
-        menu.style.position = "absolute";
-        menu.style.top = "74px";
-        menu.style.left = "20px";
-        menu.style.right = "20px";
-        menu.style.flexDirection = "column";
-        menu.style.alignItems = "flex-start";
-        menu.style.padding = "20px";
-        menu.style.border = "1px solid rgba(38,39,82,.08)";
-        menu.style.borderRadius = "20px";
-        menu.style.background = "#fff";
-        menu.style.boxShadow = "0 20px 40px rgba(20,24,40,.12)";
-        if(cta) cta.style.display = isOpen ? "none" : "inline-flex";
-      }
-    }
+    const nav = document.getElementById('topNav');
+    const toggle = document.getElementById('menuToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+
+    toggle.addEventListener('click', function(){
+      nav.classList.toggle('open');
+    });
+
+    mobilePanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
   </script>
 </body>
 </html>
