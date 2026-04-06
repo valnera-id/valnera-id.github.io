@@ -276,42 +276,84 @@
 
     /* TRUST */
     .trust{
-      background:var(--white);
-      padding:26px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    .trust-row{
-      display:grid;
-      grid-template-columns:220px 1fr;
-      gap:24px;
-      align-items:center;
-    }
-    .trust-label{
-      font-size:13px;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      color:var(--muted);
-      font-weight:700;
-    }
-    .trust-list{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:12px;
-    }
-    .trust-item{
-      border:1px solid var(--line);
-      background:var(--light);
-      border-radius:16px;
-      padding:18px;
-      text-align:center;
-      color:var(--primary);
-      font-weight:700;
-      min-height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
+  background:var(--white);
+  padding:34px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.trust-row{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:24px;
+  align-items:center;
+}
+
+.trust-label{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.trust-list{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:18px;
+}
+
+.trust-item{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(135deg, #262752 0%, #1f4f72 58%, #00917e 100%);
+  border-radius:22px;
+  padding:28px 20px;
+  min-height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#ffffff;
+  font-weight:800;
+  font-size:18px;
+  line-height:1.35;
+  box-shadow:0 18px 40px rgba(38,39,82,.18);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.trust-item::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  top:-90px;
+  right:-70px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+.trust-item::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  bottom:-60px;
+  left:-35px;
+  border-radius:50%;
+  background:rgba(255,255,255,.05);
+}
+
+.trust-item span{
+  position:relative;
+  z-index:1;
+}
+
+.trust-item:hover{
+  transform:translateY(-5px);
+  box-shadow:0 24px 50px rgba(38,39,82,.24);
+}
 
     /* ABOUT */
     .about-grid{
@@ -649,17 +691,17 @@
     </div>
   </header>
 
-  <section class="trust">
-    <div class="container trust-row">
-      <div class="trust-label">Bidang Fokus Utama</div>
-      <div class="trust-list">
-        <div class="trust-item">AI PowerPoint</div>
-        <div class="trust-item">Power BI</div>
-        <div class="trust-item">Excel</div>
-        <div class="trust-item">Corporate Training</div>
-      </div>
+<section class="trust">
+  <div class="container trust-row">
+    <div class="trust-label">Bidang Fokus Utama</div>
+    <div class="trust-list">
+      <div class="trust-item"><span>AI PowerPoint</span></div>
+      <div class="trust-item"><span>Power BI</span></div>
+      <div class="trust-item"><span>Excel</span></div>
+      <div class="trust-item"><span>Corporate Training</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section" id="about">
     <div class="container">
