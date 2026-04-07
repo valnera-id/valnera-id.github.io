@@ -1118,20 +1118,24 @@
   const toggle = document.getElementById('menuToggle');
   const mobilePanel = document.getElementById('mobilePanel');
 
-  toggle.addEventListener('click', function(){
-    nav.classList.toggle('open');
-  });
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      nav.classList.toggle('open');
+    });
+  }
 
-  mobilePanel.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => nav.classList.remove('open'));
-  });
+  if (mobilePanel) {
+    mobilePanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+  }
 
   const heroSlides = document.querySelectorAll('.hero-slide');
   const heroDots = document.querySelectorAll('.hero-dot');
   let heroCurrentSlide = 0;
   let heroSlideInterval;
 
-  function showHeroSlide(index){
+  function showHeroSlide(index) {
     heroSlides.forEach((slide, i) => {
       slide.classList.toggle('active', i === index);
     });
@@ -1143,14 +1147,14 @@
     heroCurrentSlide = index;
   }
 
-  function moveHeroSlide(step){
+  function moveHeroSlide(step) {
     let nextIndex = heroCurrentSlide + step;
 
-    if(nextIndex >= heroSlides.length){
+    if (nextIndex >= heroSlides.length) {
       nextIndex = 0;
     }
 
-    if(nextIndex < 0){
+    if (nextIndex < 0) {
       nextIndex = heroSlides.length - 1;
     }
 
@@ -1158,28 +1162,32 @@
     resetHeroAutoSlide();
   }
 
-  function goToHeroSlide(index){
+  function goToHeroSlide(index) {
     showHeroSlide(index);
     resetHeroAutoSlide();
   }
 
-  function startHeroAutoSlide(){
+  function startHeroAutoSlide() {
     heroSlideInterval = setInterval(() => {
       let nextIndex = heroCurrentSlide + 1;
-      if(nextIndex >= heroSlides.length){
+
+      if (nextIndex >= heroSlides.length) {
         nextIndex = 0;
       }
+
       showHeroSlide(nextIndex);
     }, 4000);
   }
 
-  function resetHeroAutoSlide(){
+  function resetHeroAutoSlide() {
     clearInterval(heroSlideInterval);
     startHeroAutoSlide();
   }
 
-  showHeroSlide(0);
-  startHeroAutoSlide();
+  if (heroSlides.length > 0) {
+    showHeroSlide(0);
+    startHeroAutoSlide();
+  }
 </script>
   
 </body>
