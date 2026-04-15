@@ -1629,14 +1629,14 @@
 
  .portfolio {
   background: #ffffff;
-  padding: 34px 0 18px;
+  padding: 20px 0 22px;
   overflow: hidden;
 }
 
 .portfolio-head {
   text-align: center;
-  max-width: 860px;
-  margin: 0 auto 28px;
+  max-width: 980px;
+  margin: 0 auto 18px;
 }
 
 .portfolio-label {
@@ -1646,15 +1646,17 @@
   letter-spacing: 0.2em;
   color: var(--secondary);
   font-weight: 800;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .portfolio-title {
-  font-size: clamp(24px, 2.6vw, 40px);
-  line-height: 1.18;
+  font-size: clamp(28px, 2.6vw, 42px);
+  line-height: 1.14;
   color: var(--ink);
   font-weight: 800;
   margin-bottom: 14px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portfolio-desc {
@@ -1665,16 +1667,16 @@
 
 .logo-marquee {
   position: relative;
-  margin-top: 30px;
+  margin-top: 18px;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .logo-track {
   display: flex;
   width: max-content;
-  gap: 18px;
+  gap: 22px;
   animation: scrollLogos 32s linear infinite;
 }
 
@@ -1684,21 +1686,21 @@
 
 .logo-card {
   flex: 0 0 auto;
-  width: 190px;
-  height: 108px;
+  width: 230px;
+  height: 120px;
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   border: 1px solid #e7edf3;
-  border-radius: 22px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 22px;
+  padding: 22px 24px;
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
 }
 
 .logo-card img {
   max-width: 100%;
-  max-height: 46px;
+  max-height: 56px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1713,7 +1715,7 @@
 }
 
 .logo-card span {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.5;
   font-weight: 700;
   color: #475569;
@@ -1730,23 +1732,43 @@
 }
 
 @media (max-width: 768px) {
-  .logo-card {
-    width: 160px;
-    height: 92px;
-    border-radius: 18px;
-    padding: 14px 18px;
+  .portfolio {
+    padding: 18px 0 18px;
   }
 
-  .logo-card img {
-    max-height: 38px;
+  .portfolio-head {
+    margin: 0 auto 14px;
+  }
+
+  .portfolio-title {
+    font-size: clamp(24px, 7vw, 34px);
+    max-width: 12ch;
+  }
+
+  .logo-marquee {
+    margin-top: 14px;
   }
 
   .logo-track {
     gap: 14px;
     animation-duration: 24s;
   }
-}
 
+  .logo-card {
+    width: 170px;
+    height: 96px;
+    border-radius: 18px;
+    padding: 14px 16px;
+  }
+
+  .logo-card img {
+    max-height: 40px;
+  }
+
+  .logo-card span {
+    font-size: 14px;
+  }
+}
     .social-proof {
   background: linear-gradient(135deg, #262752 0%, #1f4f72 58%, #00917e 100%);
   padding: 26px 0;
@@ -2527,9 +2549,6 @@
     <div class="portfolio-head">
       <div class="portfolio-label">Portfolio</div>
       <h2 class="portfolio-title">Peserta Kami Berasal dari Berbagai Instansi dan Perusahaan</h2>
-      <p class="portfolio-desc">
-        Valnera telah dipercaya oleh peserta dari berbagai institusi, organisasi, dan perusahaan. Berikut beberapa instansi yang menjadi bagian dari perjalanan belajar bersama kami.
-      </p>
     </div>
 
     <div class="logo-marquee">
