@@ -2145,6 +2145,100 @@
         grid-template-columns: 1fr;
       }
     }
+
+    @media (max-width: 768px) {
+  .hero {
+    padding: 28px 0 56px !important;
+  }
+
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    align-items: start !important;
+  }
+
+  .hero-copy,
+  .hero-card {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(38px, 11vw, 56px) !important;
+    line-height: 1.02 !important;
+    max-width: none !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-copy p {
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    max-width: none !important;
+    margin-top: 14px !important;
+  }
+
+  .hero-cta {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 22px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-cta .btn {
+    width: 100% !important;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 16px !important;
+  }
+
+  .metric {
+    padding: 16px 18px !important;
+  }
+
+  .hero-card {
+    padding: 14px !important;
+    margin-top: 6px !important;
+  }
+
+  .hero-slider {
+    min-height: 220px !important;
+    border-radius: 22px !important;
+  }
+
+  .hero-note {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 14px !important;
+  }
+
+  .note-item {
+    min-height: auto !important;
+    padding: 16px !important;
+  }
+}
+
+    @media (max-width: 768px) {
+  .nav-inner {
+    height: 72px !important;
+  }
+
+  .brand-logo {
+    height: 34px !important;
+  }
+
+  .brand-name {
+    font-size: 13px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .menu-toggle {
+    font-size: 24px !important;
+  }
+}
   </style>
 </head>
 <body>
