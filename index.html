@@ -778,93 +778,171 @@
   }
 }
 
-    .programs {
-      background: #f7fafc;
-    }
+   .programs {
+  background: #f4f8fb;
+  padding: 72px 0;
+}
 
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 30px;
-    }
+.program-head {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 32px;
+}
 
-    .program-card {
-      overflow: hidden;
-      transition: 0.25s ease;
-    }
+.program-head-left .eyebrow {
+  margin-bottom: 12px;
+}
 
-    .program-card:hover {
-      transform: translateY(-6px);
-    }
+.program-head-left h2 {
+  font-size: clamp(28px, 2.8vw, 42px);
+  line-height: 1.12;
+  color: var(--ink);
+  font-weight: 800;
+  max-width: 12ch;
+}
 
-    .program-top {
-      padding: 24px 24px 14px;
-      background: linear-gradient(135deg, rgba(38, 39, 82, 0.05), rgba(0, 145, 126, 0.08));
-      border-bottom: 1px solid var(--line);
-    }
+.program-head-right p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 720px;
+}
 
-    .program-badge {
-      display: inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(38, 39, 82, 0.08);
-      color: var(--primary);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
 
-    .program-title {
-      font-size: 24px;
-      line-height: 1.15;
-      color: var(--ink);
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
+.program-card {
+  background: #ffffff;
+  border: 1px solid #e6edf4;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  transition: 0.28s ease;
+  display: flex;
+  flex-direction: column;
+}
 
-    .program-copy {
-      padding: 22px 24px 24px;
-    }
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.10);
+}
 
-    .program-copy p {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
+.program-top {
+  padding: 28px 26px 20px;
+  background: linear-gradient(135deg, rgba(38, 39, 82, 0.08), rgba(0, 145, 126, 0.10));
+  border-bottom: 1px solid #e6edf4;
+  position: relative;
+  overflow: hidden;
+}
 
-    .program-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
+.program-top::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+}
 
-    .program-list li {
-      font-size: 14px;
-      color: #334155;
-      padding-left: 22px;
-      position: relative;
-    }
+.program-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
 
-    .program-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--secondary);
-    }
+.program-title {
+  font-size: 28px;
+  line-height: 1.12;
+  color: var(--ink);
+  font-weight: 800;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
 
-    .program-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.program-subtitle {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #49627a;
+  position: relative;
+  z-index: 1;
+  max-width: 30ch;
+}
+
+.program-copy {
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.program-copy p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.program-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.program-list li {
+  font-size: 14px;
+  color: #334155;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.program-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+
+.program-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+@media (max-width: 1080px) {
+  .program-head {
+    grid-template-columns: 1fr;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     .why-grid {
       display: grid;
@@ -1966,75 +2044,106 @@
   </div>
 </section>
   
-  <section class="section programs" id="programs">
-    <div class="container">
-      <span class="eyebrow">Main Programs</span>
-      <h2 class="section-title">Program unggulan Valnera</h2>
-      <p class="section-desc">
-        Valnera memiliki beberapa program ungguk kepelatiahn dengan AI 
-      </p>
+  <section class="programs" id="programs">
+  <div class="container">
+    <div class="program-head">
+      <div class="program-head-left">
+        <span class="eyebrow">Main Programs</span>
+        <h2>Program unggulan untuk pembelajaran yang lebih strategis</h2>
+      </div>
 
-      <div class="program-grid">
-        <article class="program-card">
-          <div class="program-top">
-            <span class="program-badge">Program 01</span>
-            <h3 class="program-title">AI PowerPoint</h3>
-          </div>
-          <div class="program-copy">
-            <p>Program untuk mempercepat pembuatan presentasi yang lebih strategis, efisien, dan relevan dengan kebutuhan profesional modern.</p>
-            <ul class="program-list">
-              <li>Webinar reguler</li>
-              <li>Premium class intensif</li>
-              <li>Private class 1-on-1</li>
-            </ul>
-            <div class="program-actions">
-              <a href="#" class="btn btn-primary">Lihat Detail</a>
-              <a href="#contact" class="btn btn-outline">Konsultasi</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="program-card">
-          <div class="program-top">
-            <span class="program-badge">Program 02</span>
-            <h3 class="program-title">Power BI</h3>
-          </div>
-          <div class="program-copy">
-            <p>Program untuk membangun kemampuan analisis, visualisasi data, dan dashboard yang mendukung insight dan pengambilan keputusan.</p>
-            <ul class="program-list">
-              <li>Dashboard thinking</li>
-              <li>DAX dan data modeling</li>
-              <li>Corporate learning path</li>
-            </ul>
-            <div class="program-actions">
-              <a href="#" class="btn btn-primary">Lihat Detail</a>
-              <a href="#contact" class="btn btn-outline">Konsultasi</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="program-card">
-          <div class="program-top">
-            <span class="program-badge">Program 03</span>
-            <h3 class="program-title">Excel</h3>
-          </div>
-          <div class="program-copy">
-            <p>Program yang dirancang untuk meningkatkan produktivitas kerja melalui formula, pengolahan data, otomatisasi, dan analisis yang praktis.</p>
-            <ul class="program-list">
-              <li>Formula &amp; function mastery</li>
-              <li>Data cleaning &amp; reporting</li>
-              <li>Kelas private &amp; premium</li>
-            </ul>
-            <div class="program-actions">
-              <a href="#" class="btn btn-primary">Lihat Detail</a>
-              <a href="#contact" class="btn btn-outline">Konsultasi</a>
-            </div>
-          </div>
-        </article>
+      <div class="program-head-right">
+        <p>
+          Valnera menghadirkan program pelatihan yang dirancang untuk menjawab kebutuhan profesional modern, mulai dari presentasi berbasis AI, analisis data, hingga peningkatan produktivitas kerja. Setiap program disusun agar relevan, aplikatif, dan berdampak nyata dalam pekerjaan.
+        </p>
       </div>
     </div>
-  </section>
 
+    <div class="program-grid">
+      <article class="program-card">
+        <div class="program-top">
+          <span class="program-badge">Program 01</span>
+          <h3 class="program-title">AI PowerPoint</h3>
+          <div class="program-subtitle">
+            Presentasi modern yang lebih cepat, strategis, dan meyakinkan.
+          </div>
+        </div>
+
+        <div class="program-copy">
+          <p>
+            Program ini membantu peserta memanfaatkan AI untuk menyusun presentasi yang tidak hanya menarik secara visual, tetapi juga lebih tajam dalam menyampaikan pesan, insight, dan arah komunikasi.
+          </p>
+
+          <ul class="program-list">
+            <li>Webinar reguler untuk kebutuhan upskilling cepat</li>
+            <li>Premium class intensif dengan materi lebih mendalam</li>
+            <li>Private class untuk kebutuhan individu atau tim</li>
+          </ul>
+
+          <div class="program-actions">
+            <a href="#" class="btn btn-primary">Lihat Detail</a>
+            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20AI%20PowerPoint." target="_blank" class="btn btn-outline">Konsultasi</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <div class="program-top">
+          <span class="program-badge">Program 02</span>
+          <h3 class="program-title">Power BI</h3>
+          <div class="program-subtitle">
+            Data visualization dan dashboard thinking untuk keputusan yang lebih baik.
+          </div>
+        </div>
+
+        <div class="program-copy">
+          <p>
+            Program Power BI dirancang untuk membantu peserta membangun kemampuan analisis, visualisasi, dan interpretasi data sehingga mampu menghasilkan dashboard yang lebih informatif dan berguna untuk pengambilan keputusan.
+          </p>
+
+          <ul class="program-list">
+            <li>Belajar dashboard yang jelas dan komunikatif</li>
+            <li>Penguatan data modeling dan DAX secara aplikatif</li>
+            <li>Solusi pembelajaran untuk individu maupun corporate</li>
+          </ul>
+
+          <div class="program-actions">
+            <a href="#" class="btn btn-primary">Lihat Detail</a>
+            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20Power%20BI." target="_blank" class="btn btn-outline">Konsultasi</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <div class="program-top">
+          <span class="program-badge">Program 03</span>
+          <h3 class="program-title">Excel</h3>
+          <div class="program-subtitle">
+            Produktivitas kerja yang lebih efisien melalui pengolahan data yang tepat.
+          </div>
+        </div>
+
+        <div class="program-copy">
+          <p>
+            Program Excel membantu peserta meningkatkan efisiensi kerja melalui penguasaan formula, pengolahan data, reporting, dan teknik analisis yang relevan untuk kebutuhan kerja harian maupun profesional.
+          </p>
+
+          <ul class="program-list">
+            <li>Formula dan function untuk kebutuhan kerja nyata</li>
+            <li>Data cleaning, reporting, dan analisis lebih rapi</li>
+            <li>Tersedia kelas private, premium, dan pelatihan tim</li>
+          </ul>
+
+          <div class="program-actions">
+            <a href="#" class="btn btn-primary">Lihat Detail</a>
+            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20Excel." target="_blank" class="btn btn-outline">Konsultasi</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+  
   <section class="section" id="why">
     <div class="container">
       <span class="eyebrow">Why Valnera</span>
