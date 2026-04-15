@@ -936,7 +936,126 @@
     font-size: 30px;
   }
 }
-   
+
+   .testimonials {
+  background: #ffffff;
+  padding: 72px 0;
+}
+
+.testimonial-head {
+  max-width: 860px;
+  margin-bottom: 30px;
+}
+
+.testimonial-head .eyebrow {
+  margin-bottom: 12px;
+}
+
+.testimonial-head h2 {
+  font-size: clamp(28px, 2.4vw, 38px);
+  line-height: 1.14;
+  color: var(--ink);
+  font-weight: 800;
+  max-width: 14ch;
+  margin-bottom: 14px;
+}
+
+.testimonial-head p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #e6edf4;
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.testimonial-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(38, 39, 82, 0.12), rgba(0, 145, 126, 0.14));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.testimonial-meta h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.testimonial-role {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.testimonial-quote {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #42556d;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.testimonial-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e8edf4;
+}
+
+.testimonial-platform {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.testimonial-stars {
+  color: #f5b301;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+@media (max-width: 1080px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+} 
     .why-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2132,6 +2251,77 @@
             <a href="#" class="btn btn-primary">Lihat Detail</a>
             <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20Excel." target="_blank" class="btn btn-outline">Konsultasi</a>
           </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <section class="testimonials" id="cerita-kami-testimoni">
+  <div class="container">
+    <div class="testimonial-head">
+      <span class="eyebrow">Cerita Kami</span>
+      <h2>Testimoni peserta yang merasakan manfaat pembelajaran Valnera</h2>
+      <p>
+        Pengalaman belajar yang baik tidak hanya terlihat dari materi yang disampaikan, tetapi juga dari manfaat nyata yang dirasakan peserta. Berikut beberapa cerita dan kesan peserta setelah mengikuti program bersama Valnera.
+      </p>
+    </div>
+
+    <div class="testimonial-grid">
+      <article class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-meta">
+            <h3>Andini</h3>
+            <div class="testimonial-role">Professional Participant</div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote">
+          Materinya relevan dan sangat membantu untuk kebutuhan kerja saya. Penyampaiannya jelas, runtut, dan membuat saya lebih percaya diri dalam menerapkan skill yang dipelajari.
+        </div>
+
+        <div class="testimonial-bottom">
+          <div class="testimonial-platform">Feedback Peserta</div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="testimonial-avatar">R</div>
+          <div class="testimonial-meta">
+            <h3>Rizky</h3>
+            <div class="testimonial-role">Corporate Learning Participant</div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote">
+          Programnya bukan hanya menjelaskan tools, tetapi juga membantu saya memahami cara berpikir yang lebih strategis. Ini yang membuat pelatihannya terasa bernilai.
+        </div>
+
+        <div class="testimonial-bottom">
+          <div class="testimonial-platform">Feedback Peserta</div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="testimonial-avatar">D</div>
+          <div class="testimonial-meta">
+            <h3>Dewi</h3>
+            <div class="testimonial-role">Private Class Participant</div>
+          </div>
+        </div>
+
+        <div class="testimonial-quote">
+          Saya suka karena pembelajarannya terasa modern, aplikatif, dan langsung bisa digunakan. Bukan hanya menambah wawasan, tapi juga membantu hasil kerja jadi lebih rapi.
+        </div>
+
+        <div class="testimonial-bottom">
+          <div class="testimonial-platform">Feedback Peserta</div>
+          <div class="testimonial-stars">★★★★★</div>
         </div>
       </article>
     </div>
