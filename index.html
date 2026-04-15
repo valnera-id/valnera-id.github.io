@@ -778,126 +778,115 @@
   }
 }
 
-   .programs {
+  .programs {
   background: #f4f8fb;
-  padding: 72px 0;
+  padding: 64px 0;
 }
 
 .program-head {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
-  align-items: end;
-  margin-bottom: 32px;
+  max-width: 920px;
+  margin-bottom: 34px;
 }
 
-.program-head-left .eyebrow {
+.program-head .eyebrow {
   margin-bottom: 12px;
 }
 
-.program-head-left h2 {
-  font-size: clamp(28px, 2.8vw, 42px);
-  line-height: 1.12;
+.program-head h2 {
+  font-size: clamp(28px, 2.6vw, 40px);
+  line-height: 1.14;
   color: var(--ink);
   font-weight: 800;
-  max-width: 12ch;
+  max-width: 14ch;
+  margin-bottom: 14px;
 }
 
-.program-head-right p {
+.program-head p {
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.85;
   color: var(--muted);
-  max-width: 720px;
+  max-width: 760px;
 }
 
-.program-grid {
+.program-stack {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
-.program-card {
+.program-item {
+  display: grid;
+  grid-template-columns: 360px 1fr;
   background: #ffffff;
   border: 1px solid #e6edf4;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
-  transition: 0.28s ease;
-  display: flex;
-  flex-direction: column;
 }
 
-.program-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.10);
-}
-
-.program-top {
-  padding: 28px 26px 20px;
+.program-side {
+  padding: 30px 28px;
   background: linear-gradient(135deg, rgba(38, 39, 82, 0.08), rgba(0, 145, 126, 0.10));
-  border-bottom: 1px solid #e6edf4;
+  border-right: 1px solid #e6edf4;
   position: relative;
   overflow: hidden;
 }
 
-.program-top::after {
+.program-side::after {
   content: "";
   position: absolute;
-  top: -50px;
-  right: -30px;
-  width: 160px;
-  height: 160px;
+  top: -40px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   background: rgba(255,255,255,0.22);
 }
 
 .program-badge {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255,255,255,0.72);
   color: var(--primary);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   position: relative;
   z-index: 1;
 }
 
 .program-title {
-  font-size: 28px;
-  line-height: 1.12;
+  font-size: 36px;
+  line-height: 1.1;
   color: var(--ink);
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   position: relative;
   z-index: 1;
 }
 
 .program-subtitle {
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.8;
   color: #49627a;
   position: relative;
   z-index: 1;
-  max-width: 30ch;
+  max-width: 24ch;
 }
 
-.program-copy {
-  padding: 24px 26px 26px;
+.program-content {
+  padding: 30px 30px 28px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  justify-content: space-between;
 }
 
-.program-copy p {
-  color: var(--muted);
+.program-content p {
   font-size: 15px;
-  line-height: 1.85;
+  line-height: 1.9;
+  color: var(--muted);
   margin-bottom: 18px;
 }
 
@@ -905,15 +894,15 @@
   list-style: none;
   display: grid;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .program-list li {
   font-size: 14px;
+  line-height: 1.75;
   color: #334155;
   padding-left: 24px;
   position: relative;
-  line-height: 1.7;
 }
 
 .program-list li::before {
@@ -931,19 +920,23 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: auto;
 }
 
-@media (max-width: 1080px) {
-  .program-head {
+@media (max-width: 980px) {
+  .program-item {
     grid-template-columns: 1fr;
   }
 
-  .program-grid {
-    grid-template-columns: 1fr;
+  .program-side {
+    border-right: none;
+    border-bottom: 1px solid #e6edf4;
+  }
+
+  .program-title {
+    font-size: 30px;
   }
 }
-
+   
     .why-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2047,21 +2040,16 @@
   <section class="programs" id="programs">
   <div class="container">
     <div class="program-head">
-      <div class="program-head-left">
-        <span class="eyebrow">Main Programs</span>
-        <h2>Program unggulan untuk pembelajaran yang lebih strategis</h2>
-      </div>
-
-      <div class="program-head-right">
-        <p>
-          Valnera menghadirkan program pelatihan yang dirancang untuk menjawab kebutuhan profesional modern, mulai dari presentasi berbasis AI, analisis data, hingga peningkatan produktivitas kerja. Setiap program disusun agar relevan, aplikatif, dan berdampak nyata dalam pekerjaan.
-        </p>
-      </div>
+      <span class="eyebrow">Main Programs</span>
+      <h2>Program unggulan untuk pembelajaran yang lebih strategis</h2>
+      <p>
+        Valnera menghadirkan program pelatihan yang dirancang untuk menjawab kebutuhan profesional modern, mulai dari presentasi berbasis AI, analisis data, hingga peningkatan produktivitas kerja. Setiap program disusun agar relevan, aplikatif, dan berdampak nyata dalam pekerjaan.
+      </p>
     </div>
 
-    <div class="program-grid">
-      <article class="program-card">
-        <div class="program-top">
+    <div class="program-stack">
+      <article class="program-item">
+        <div class="program-side">
           <span class="program-badge">Program 01</span>
           <h3 class="program-title">AI PowerPoint</h3>
           <div class="program-subtitle">
@@ -2069,16 +2057,18 @@
           </div>
         </div>
 
-        <div class="program-copy">
-          <p>
-            Program ini membantu peserta memanfaatkan AI untuk menyusun presentasi yang tidak hanya menarik secara visual, tetapi juga lebih tajam dalam menyampaikan pesan, insight, dan arah komunikasi.
-          </p>
+        <div class="program-content">
+          <div>
+            <p>
+              Program ini membantu peserta memanfaatkan AI untuk menyusun presentasi yang tidak hanya menarik secara visual, tetapi juga lebih tajam dalam menyampaikan pesan, insight, dan arah komunikasi.
+            </p>
 
-          <ul class="program-list">
-            <li>Webinar reguler untuk kebutuhan upskilling cepat</li>
-            <li>Premium class intensif dengan materi lebih mendalam</li>
-            <li>Private class untuk kebutuhan individu atau tim</li>
-          </ul>
+            <ul class="program-list">
+              <li>Webinar reguler untuk kebutuhan upskilling cepat</li>
+              <li>Premium class intensif dengan materi lebih mendalam</li>
+              <li>Private class untuk kebutuhan individu atau tim</li>
+            </ul>
+          </div>
 
           <div class="program-actions">
             <a href="#" class="btn btn-primary">Lihat Detail</a>
@@ -2087,8 +2077,8 @@
         </div>
       </article>
 
-      <article class="program-card">
-        <div class="program-top">
+      <article class="program-item">
+        <div class="program-side">
           <span class="program-badge">Program 02</span>
           <h3 class="program-title">Power BI</h3>
           <div class="program-subtitle">
@@ -2096,16 +2086,18 @@
           </div>
         </div>
 
-        <div class="program-copy">
-          <p>
-            Program Power BI dirancang untuk membantu peserta membangun kemampuan analisis, visualisasi, dan interpretasi data sehingga mampu menghasilkan dashboard yang lebih informatif dan berguna untuk pengambilan keputusan.
-          </p>
+        <div class="program-content">
+          <div>
+            <p>
+              Program Power BI dirancang untuk membantu peserta membangun kemampuan analisis, visualisasi, dan interpretasi data sehingga mampu menghasilkan dashboard yang lebih informatif dan berguna untuk pengambilan keputusan.
+            </p>
 
-          <ul class="program-list">
-            <li>Belajar dashboard yang jelas dan komunikatif</li>
-            <li>Penguatan data modeling dan DAX secara aplikatif</li>
-            <li>Solusi pembelajaran untuk individu maupun corporate</li>
-          </ul>
+            <ul class="program-list">
+              <li>Belajar dashboard yang jelas dan komunikatif</li>
+              <li>Penguatan data modeling dan DAX secara aplikatif</li>
+              <li>Solusi pembelajaran untuk individu maupun corporate</li>
+            </ul>
+          </div>
 
           <div class="program-actions">
             <a href="#" class="btn btn-primary">Lihat Detail</a>
@@ -2114,8 +2106,8 @@
         </div>
       </article>
 
-      <article class="program-card">
-        <div class="program-top">
+      <article class="program-item">
+        <div class="program-side">
           <span class="program-badge">Program 03</span>
           <h3 class="program-title">Excel</h3>
           <div class="program-subtitle">
@@ -2123,16 +2115,18 @@
           </div>
         </div>
 
-        <div class="program-copy">
-          <p>
-            Program Excel membantu peserta meningkatkan efisiensi kerja melalui penguasaan formula, pengolahan data, reporting, dan teknik analisis yang relevan untuk kebutuhan kerja harian maupun profesional.
-          </p>
+        <div class="program-content">
+          <div>
+            <p>
+              Program Excel membantu peserta meningkatkan efisiensi kerja melalui penguasaan formula, pengolahan data, reporting, dan teknik analisis yang relevan untuk kebutuhan kerja harian maupun profesional.
+            </p>
 
-          <ul class="program-list">
-            <li>Formula dan function untuk kebutuhan kerja nyata</li>
-            <li>Data cleaning, reporting, dan analisis lebih rapi</li>
-            <li>Tersedia kelas private, premium, dan pelatihan tim</li>
-          </ul>
+            <ul class="program-list">
+              <li>Formula dan function untuk kebutuhan kerja nyata</li>
+              <li>Data cleaning, reporting, dan analisis lebih rapi</li>
+              <li>Tersedia kelas private, premium, dan pelatihan tim</li>
+            </ul>
+          </div>
 
           <div class="program-actions">
             <a href="#" class="btn btn-primary">Lihat Detail</a>
