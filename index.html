@@ -1152,6 +1152,117 @@
     grid-template-columns: 1fr;
   }
 }
+
+ .portfolio {
+  background: #ffffff;
+  padding: 34px 0 10px;
+}
+
+.portfolio-head {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 26px;
+}
+
+.portfolio-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--secondary);
+  font-weight: 800;
+}
+
+.portfolio-title {
+  font-size: clamp(24px, 2.4vw, 38px);
+  line-height: 1.18;
+  color: var(--ink);
+  font-weight: 800;
+  max-width: 16ch;
+}
+
+.portfolio-desc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.logo-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e7edf3;
+  border-radius: 22px;
+  min-height: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+  transition: 0.25s ease;
+}
+
+.logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+}
+
+.logo-card img {
+  max-width: 100%;
+  max-height: 48px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: 0.25s ease;
+}
+
+.logo-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.logo-card span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 1080px) {
+  .portfolio-head {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .logo-card {
+    min-height: 96px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-grid {
+    grid-template-columns: 1fr;
+  }
+}
     .contact-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
@@ -1632,6 +1743,34 @@
         <strong>Untuk Institusi</strong>
         <p>Memberikan solusi pembelajaran yang lebih strategis untuk peningkatan kualitas SDM dan performa organisasi.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+  <section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-head">
+      <div>
+        <div class="portfolio-label">Portfolio</div>
+        <h2 class="portfolio-title">Peserta Murid Kami berasal dari berbagai instansi dan perusahaan</h2>
+      </div>
+
+      <p class="portfolio-desc">
+        Valnera telah dipercaya oleh peserta dari berbagai perusahaan, institusi, dan organisasi. Section ini dapat diisi dengan logo instansi untuk memperkuat kredibilitas dan kepercayaan brand.
+      </p>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-card"><span>Logo Instansi 1</span></div>
+      <div class="logo-card"><span>Logo Instansi 2</span></div>
+      <div class="logo-card"><span>Logo Instansi 3</span></div>
+      <div class="logo-card"><span>Logo Instansi 4</span></div>
+      <div class="logo-card"><span>Logo Instansi 5</span></div>
+      <div class="logo-card"><span>Logo Instansi 6</span></div>
+      <div class="logo-card"><span>Logo Instansi 7</span></div>
+      <div class="logo-card"><span>Logo Instansi 8</span></div>
+      <div class="logo-card"><span>Logo Instansi 9</span></div>
+      <div class="logo-card"><span>Logo Instansi 10</span></div>
     </div>
   </div>
 </section>
