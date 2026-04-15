@@ -1155,72 +1155,81 @@
 
  .portfolio {
   background: #ffffff;
-  padding: 34px 0 10px;
+  padding: 34px 0 18px;
+  overflow: hidden;
 }
 
 .portfolio-head {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 24px;
-  align-items: start;
-  margin-bottom: 26px;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 28px;
 }
 
 .portfolio-label {
-  font-size: 13px;
+  display: inline-block;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   color: var(--secondary);
   font-weight: 800;
+  margin-bottom: 14px;
 }
 
 .portfolio-title {
-  font-size: clamp(24px, 2.4vw, 38px);
+  font-size: clamp(24px, 2.6vw, 40px);
   line-height: 1.18;
   color: var(--ink);
   font-weight: 800;
-  max-width: 16ch;
+  margin-bottom: 14px;
 }
 
 .portfolio-desc {
   font-size: 15px;
   line-height: 1.85;
   color: var(--muted);
-  max-width: 760px;
 }
 
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+.logo-marquee {
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
   gap: 18px;
+  animation: scrollLogos 32s linear infinite;
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
 }
 
 .logo-card {
+  flex: 0 0 auto;
+  width: 190px;
+  height: 108px;
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   border: 1px solid #e7edf3;
   border-radius: 22px;
-  min-height: 118px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
-  transition: 0.25s ease;
-}
-
-.logo-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+  padding: 18px 22px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
 }
 
 .logo-card img {
   max-width: 100%;
-  max-height: 48px;
+  max-height: 46px;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.9;
+  opacity: 0.92;
   transition: 0.25s ease;
 }
 
@@ -1230,37 +1239,37 @@
 }
 
 .logo-card span {
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.5;
   font-weight: 700;
   color: #475569;
   text-align: center;
-  line-height: 1.5;
 }
 
-@media (max-width: 1080px) {
-  .portfolio-head {
-    grid-template-columns: 1fr;
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
   }
-
-  .logo-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  to {
+    transform: translateX(-50%);
   }
 }
 
-@media (max-width: 680px) {
-  .logo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+@media (max-width: 768px) {
   .logo-card {
-    min-height: 96px;
-    padding: 16px;
+    width: 160px;
+    height: 92px;
+    border-radius: 18px;
+    padding: 14px 18px;
   }
-}
 
-@media (max-width: 480px) {
-  .logo-grid {
-    grid-template-columns: 1fr;
+  .logo-card img {
+    max-height: 38px;
+  }
+
+  .logo-track {
+    gap: 14px;
+    animation-duration: 24s;
   }
 }
     .contact-grid {
@@ -1750,31 +1759,37 @@
   <section class="portfolio" id="portfolio">
   <div class="container">
     <div class="portfolio-head">
-      <div>
-        <div class="portfolio-label">Portfolio</div>
-        <h2 class="portfolio-title">Peserta Murid Kami berasal dari berbagai instansi dan perusahaan</h2>
-      </div>
-
+      <div class="portfolio-label">Portfolio</div>
+      <h2 class="portfolio-title">Peserta Kami Berasal dari Berbagai Instansi dan Perusahaan</h2>
       <p class="portfolio-desc">
-        Valnera telah dipercaya oleh peserta dari berbagai perusahaan, institusi, dan organisasi. Section ini dapat diisi dengan logo instansi untuk memperkuat kredibilitas dan kepercayaan brand.
+        Valnera telah dipercaya oleh peserta dari berbagai institusi, organisasi, dan perusahaan. Berikut beberapa instansi yang menjadi bagian dari perjalanan belajar bersama kami.
       </p>
     </div>
 
-    <div class="logo-grid">
-      <div class="logo-card"><span>Logo Instansi 1</span></div>
-      <div class="logo-card"><span>Logo Instansi 2</span></div>
-      <div class="logo-card"><span>Logo Instansi 3</span></div>
-      <div class="logo-card"><span>Logo Instansi 4</span></div>
-      <div class="logo-card"><span>Logo Instansi 5</span></div>
-      <div class="logo-card"><span>Logo Instansi 6</span></div>
-      <div class="logo-card"><span>Logo Instansi 7</span></div>
-      <div class="logo-card"><span>Logo Instansi 8</span></div>
-      <div class="logo-card"><span>Logo Instansi 9</span></div>
-      <div class="logo-card"><span>Logo Instansi 10</span></div>
+    <div class="logo-marquee">
+      <div class="logo-track">
+        <div class="logo-card"><span>Instansi 1</span></div>
+        <div class="logo-card"><span>Instansi 2</span></div>
+        <div class="logo-card"><span>Instansi 3</span></div>
+        <div class="logo-card"><span>Instansi 4</span></div>
+        <div class="logo-card"><span>Instansi 5</span></div>
+        <div class="logo-card"><span>Instansi 6</span></div>
+        <div class="logo-card"><span>Instansi 7</span></div>
+        <div class="logo-card"><span>Instansi 8</span></div>
+
+        <div class="logo-card"><span>Instansi 1</span></div>
+        <div class="logo-card"><span>Instansi 2</span></div>
+        <div class="logo-card"><span>Instansi 3</span></div>
+        <div class="logo-card"><span>Instansi 4</span></div>
+        <div class="logo-card"><span>Instansi 5</span></div>
+        <div class="logo-card"><span>Instansi 6</span></div>
+        <div class="logo-card"><span>Instansi 7</span></div>
+        <div class="logo-card"><span>Instansi 8</span></div>
+      </div>
     </div>
   </div>
 </section>
-
+  
   <section class="section programs" id="programs">
     <div class="container">
       <span class="eyebrow">Main Programs</span>
