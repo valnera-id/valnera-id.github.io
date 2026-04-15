@@ -1864,96 +1864,176 @@
     max-width: none;
   }
 }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
-      margin-top: 30px;
-    }
+   .contact-section {
+  background: #f8fbff;
+  padding: 72px 0 78px;
+}
 
-    .contact-card {
-      padding: 30px;
-    }
+.contact-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 30px;
+}
 
-    .contact-card h3 {
-      font-size: 22px;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
+.contact-head .eyebrow {
+  margin-bottom: 12px;
+}
 
-    .contact-card p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
+.contact-head h2 {
+  font-size: clamp(28px, 2.4vw, 40px);
+  line-height: 1.12;
+  color: var(--ink);
+  font-weight: 800;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
 
-    .contact-list {
-      list-style: none;
-      display: grid;
-      gap: 16px;
-      margin-top: 12px;
-    }
+.contact-head p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 620px;
+  margin: 0 auto;
+}
 
-    .contact-list li {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: #f8fafc;
-      border: 1px solid #e8edf4;
-      font-size: 15px;
-    }
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: stretch;
+}
 
-    .contact-list strong {
-      display: block;
-      color: var(--primary);
-      margin-bottom: 4px;
-    }
+.contact-panel,
+.contact-cta {
+  background: #ffffff;
+  border: 1px solid #e6edf4;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
 
-    .footer {
-      background: #0b1020;
-      color: rgba(255, 255, 255, 0.76);
-      padding: 26px 0;
-    }
+.contact-panel {
+  padding: 30px;
+}
 
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
+.contact-panel h3,
+.contact-cta h3 {
+  font-size: 24px;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+}
 
-    .footer a:hover {
-      color: #ffffff;
-    }
+.contact-panel p,
+.contact-cta p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+}
 
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .trust-row,
-      .cta-box {
-        grid-template-columns: 1fr;
-      }
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
 
-      .program-grid,
-      .why-grid,
-      .proof-grid,
-      .flow-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+.contact-list li {
+  padding: 18px 18px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e8edf4;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #42556d;
+}
 
-      .trust-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+.contact-list strong {
+  display: block;
+  color: var(--primary);
+  margin-bottom: 4px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
 
-      .hero-metrics {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+.contact-cta {
+  padding: 30px;
+  background: linear-gradient(135deg, #262752 0%, #1f4f72 58%, #00917e 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
 
-      .cta-box {
-        padding: 28px;
-      }
-    }
+.contact-cta::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+
+.contact-cta::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -50px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+
+.contact-cta h3,
+.contact-cta p,
+.contact-cta-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-cta h3,
+.contact-cta p {
+  color: #ffffff;
+}
+
+.contact-cta p {
+  color: rgba(255,255,255,0.84);
+}
+
+.contact-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.contact-cta .btn-primary {
+  background: #ffffff;
+  color: var(--primary);
+  box-shadow: none;
+}
+
+.contact-cta .btn-primary:hover {
+  background: #f1f5f9;
+}
+
+.contact-cta .btn-outline {
+  border-color: rgba(255,255,255,0.26);
+  color: #ffffff;
+}
+
+.contact-cta .btn-outline:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.36);
+}
+
+@media (max-width: 1080px) {
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+}
 
     @media (max-width: 860px) {
       .nav-menu,
@@ -2728,38 +2808,6 @@
   </div>
 </section>
   
-  <section class="section" id="why">
-    <div class="container">
-      <span class="eyebrow">Why Valnera</span>
-      <h2 class="section-title">Mengapa Valnera</h2>
-      <p class="section-desc">
-        Dengan valnera jaya jaya jaya
-      </p>
-
-      <div class="why-grid">
-        <div class="feature-card">
-          <div class="feature-no">01</div>
-          <h3>Profesional</h3>
-          <p>Penyampaian materi dan komunikasi diarahkan untuk kebutuhan profesional dan organisasi.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-no">02</div>
-          <h3>Konsisten</h3>
-          <p>kerenn.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-no">03</div>
-          <h3>Strategis</h3>
-          <p>Fokus bukan hanya pada tools, tetapi pada manfaat nyata untuk keputusan kerja dan pertumbuhan.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-no">04</div>
-          <h3>Insightful</h3>
-          <p>Setiap kepelatihan mendorong skill yang jelas, kredibel, dan bernilai tinggi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section proof" id="proof">
     <div class="container">
@@ -2790,101 +2838,65 @@
     </div>
   </section>
 
-  <section class="section" id="flow">
-    <div class="container">
-      <span class="eyebrow">Simple Website Flow</span>
-      <h2 class="section-title">Judul backgroune next deganti</h2>
-      <p class="section-desc">
-        sesuaikan isi.
-      </p>
-
-      <div class="flow-grid">
-        <div class="flow-step">
-          <div class="step-num">1</div>
-          <h3>Hero</h3>
-          <p>Bagian pembuka untuk membangun kesan pertama, value utama, dan CTA.</p>
-        </div>
-        <div class="flow-step">
-          <div class="step-num">2</div>
-          <h3>About</h3>
-          <p>Menjelaskan siapa Valnera, positioning, dan target market.</p>
-        </div>
-        <div class="flow-step">
-          <div class="step-num">3</div>
-          <h3>Programs</h3>
-          <p>Menampilkan produk atau layanan utama yang menjadi fokus bisnis.</p>
-        </div>
-        <div class="flow-step">
-          <div class="step-num">4</div>
-          <h3>CTA</h3>
-          <p>Mengarahkan pengunjung untuk konsultasi, bertanya, atau mendaftar kelas.</p>
-        </div>
-      </div>
-
-      <div class="cta-box">
-        <div>
-          <h3>Sesuaikan halaman ini dengan program valnera</h3>
-          <p>soon edit.</p>
-        </div>
-        <a href="#contact" class="btn btn-secondary">Edit</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
+ <section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-head">
       <span class="eyebrow">Contact</span>
-      <h2 class="section-title">Konsultasi kebutuhan pelatihan</h2>
-      <p class="section-desc">
-        next edit deganti background e,tulisane dll 
+      <h2>Konsultasikan kebutuhan pelatihan Anda bersama Valnera</h2>
+      <p>
+        Mulai dari kebutuhan individu, tim, hingga institusi, Valnera siap membantu Anda menemukan program pembelajaran yang paling relevan dan berdampak.
       </p>
+    </div>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Hubungi Valnera</h3>
-          <p>Ubah data jika perlu.</p>
+    <div class="contact-wrap">
+      <div class="contact-panel">
+        <h3>Hubungi Valnera</h3>
+        <p>
+          Untuk informasi program, kerja sama corporate learning, private class, atau kebutuhan pelatihan khusus, Anda dapat menghubungi kami melalui kontak berikut.
+        </p>
 
-          <ul class="contact-list">
-            <li>
-              <strong>WhatsApp</strong>
-              085179893852
-            </li>
-            <li>
-              <strong>Email</strong>
-              valnera.karyainovasi@outlook.co.id
-            </li>
-            <li>
-              <strong>Alamat</strong>
-              Jl. Lapangan Bola No 5D RT.07/RW.01, Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat 11530
-            </li>
-          </ul>
-        </div>
+        <ul class="contact-list">
+          <li>
+            <strong>WhatsApp</strong>
+            085179893852
+          </li>
+          <li>
+            <strong>Email</strong>
+            valnera.karyainovasi@outlook.co.id
+          </li>
+          <li>
+            <strong>Alamat</strong>
+            Jl. Lapangan Bola No 5D RT.07/RW.01, Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat 11530
+          </li>
+        </ul>
+      </div>
 
-        <div class="contact-card">
-          <h3>Call to Action</h3>
-          <p>
-            bisi deisi nggo blok formulir, CTA pendaftaran webinar, CTA corporate training, atau daftar layanan premium/private class.
-          </p>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;">
-            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20pelatihan." target="_blank" class="btn btn-primary">Chat WhatsApp</a>
-            <a href="#programs" class="btn btn-outline">Lihat Program</a>
-          </div>
+      <div class="contact-cta">
+        <h3>Siap mulai belajar lebih strategis?</h3>
+        <p>
+          Diskusikan kebutuhan Anda bersama tim Valnera dan temukan program yang paling sesuai, baik untuk pengembangan individu, tim, maupun institusi.
+        </p>
+
+        <div class="contact-cta-actions">
+          <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20program%20pelatihan." target="_blank" class="btn btn-primary">Chat WhatsApp</a>
+          <a href="#programs" class="btn btn-outline">Lihat Program</a>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
+ 
   <footer class="footer">
-    <div class="container footer-row">
-      <div>© <span id="year"></span> Valnera Executive Learning Center. All rights reserved.</div>
-      <div style="display:flex;gap:18px;flex-wrap:wrap;">
-        <a href="#top">Kembali ke atas</a>
-        <a href="#about">Tentang</a>
-        <a href="#programs">Program</a>
-        <a href="#contact">Kontak</a>
-      </div>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Valnera. All rights reserved.</div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;">
+      <a href="#top">Kembali ke atas</a>
+      <a href="#about">Tentang</a>
+      <a href="#programs">Program</a>
+      <a href="#contact">Kontak</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
