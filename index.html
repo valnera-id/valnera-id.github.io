@@ -1157,6 +1157,189 @@
     justify-content: center;
   }
 }
+
+  .schedule-section {
+  background: linear-gradient(135deg, #262752 0%, #1f4f72 58%, #00917e 100%);
+  padding: 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.schedule-section::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: -100px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.schedule-section::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  right: -90px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.schedule-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.schedule-head .eyebrow {
+  color: #d7fff8;
+  margin-bottom: 12px;
+}
+
+.schedule-head h2 {
+  font-size: clamp(28px, 2.5vw, 42px);
+  line-height: 1.12;
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.schedule-head p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.82);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.schedule-card {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.schedule-table {
+  display: grid;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 170px 160px;
+  gap: 0;
+  align-items: center;
+  border-bottom: 1px solid #e8edf4;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-col {
+  padding: 22px 24px;
+}
+
+.schedule-row.header {
+  background: #f7faff;
+}
+
+.schedule-row.header .schedule-col {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.schedule-date strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.schedule-date span {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.schedule-class h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--ink);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.schedule-class p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.schedule-type {
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.schedule-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(0, 145, 126, 0.10);
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.schedule-actions {
+  padding: 22px 24px;
+  text-align: center;
+}
+
+.schedule-actions .btn {
+  width: 100%;
+}
+
+@media (max-width: 1080px) {
+  .schedule-row {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-row.header {
+    display: none;
+  }
+
+  .schedule-col,
+  .schedule-actions {
+    padding: 16px 20px;
+  }
+
+  .schedule-type,
+  .schedule-actions {
+    text-align: left;
+  }
+
+  .schedule-actions .btn {
+    width: auto;
+  }
+}
     .why-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2466,6 +2649,80 @@
       <div class="testimonial-controls">
         <button class="testimonial-btn" type="button" id="testimonialPrev">‹</button>
         <button class="testimonial-btn" type="button" id="testimonialNext">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="schedule-section" id="jadwal-kelas">
+  <div class="container">
+    <div class="schedule-head">
+      <span class="eyebrow">Jadwal Kelas</span>
+      <h2>Jadwal kelas terdekat Valnera</h2>
+      <p>
+        Pilih kelas yang paling sesuai dengan kebutuhan Anda dan ikuti program pembelajaran Valnera yang dirancang lebih relevan, aplikatif, dan strategis.
+      </p>
+    </div>
+
+    <div class="schedule-card">
+      <div class="schedule-table">
+        <div class="schedule-row header">
+          <div class="schedule-col">Jadwal Kelas</div>
+          <div class="schedule-col">Program</div>
+          <div class="schedule-col">Tipe Kelas</div>
+          <div class="schedule-col">Aksi</div>
+        </div>
+
+        <div class="schedule-row">
+          <div class="schedule-col schedule-date">
+            <strong>27 April 2026 – 14 Agustus 2026</strong>
+            <span>Pendaftaran dibuka</span>
+          </div>
+          <div class="schedule-col schedule-class">
+            <h3>AI PowerPoint Mastery for Modern Professionals</h3>
+            <p>Kelas untuk membangun presentasi yang lebih strategis, cepat, dan meyakinkan dengan bantuan AI.</p>
+          </div>
+          <div class="schedule-col schedule-type">
+            <span class="schedule-badge">Bootcamp</span>
+          </div>
+          <div class="schedule-actions">
+            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20daftar%20kelas%20AI%20PowerPoint." target="_blank" class="btn btn-primary">Daftar</a>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <div class="schedule-col schedule-date">
+            <strong>30 April 2026 – 18 Juni 2026</strong>
+            <span>Pendaftaran dibuka</span>
+          </div>
+          <div class="schedule-col schedule-class">
+            <h3>Power BI for Data-Driven Decision Making</h3>
+            <p>Belajar visualisasi data, dashboard thinking, dan analisis yang lebih relevan untuk kebutuhan kerja.</p>
+          </div>
+          <div class="schedule-col schedule-type">
+            <span class="schedule-badge">Hybrid Class</span>
+          </div>
+          <div class="schedule-actions">
+            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20daftar%20kelas%20Power%20BI." target="_blank" class="btn btn-primary">Daftar</a>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <div class="schedule-col schedule-date">
+            <strong>7 Mei 2026 – 25 Juni 2026</strong>
+            <span>Pendaftaran dibuka</span>
+          </div>
+          <div class="schedule-col schedule-class">
+            <h3>Excel Productivity & Reporting Essentials</h3>
+            <p>Kelas untuk meningkatkan efisiensi kerja melalui formula, reporting, dan pengolahan data yang lebih rapi.</p>
+          </div>
+          <div class="schedule-col schedule-type">
+            <span class="schedule-badge">Regular Class</span>
+          </div>
+          <div class="schedule-actions">
+            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20daftar%20kelas%20Excel." target="_blank" class="btn btn-primary">Daftar</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
