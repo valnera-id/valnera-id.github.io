@@ -272,39 +272,85 @@
     }
 
     .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 720px;
-      margin-top: 20px;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 720px;
+  margin-top: 24px;
+}
 
-    .metric {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.92);
-      box-shadow: var(--shadow);
-      padding: 18px 20px;
-      border-radius: 18px;
-    }
+.metric {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,251,255,0.98) 100%);
+  border: 1px solid rgba(222, 232, 243, 0.9);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  padding: 20px 20px 18px;
+  border-radius: 22px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
-    .metric strong {
-      display: block;
-      font-size: 30px;
-      color: var(--primary);
-      font-weight: 800;
-      line-height: 1;
-    }
+.metric::before {
+  content: "";
+  position: absolute;
+  top: -36px;
+  right: -26px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(0, 145, 126, 0.07);
+}
 
-    .metric span {
-      display: block;
-      margin-top: 8px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      font-weight: 700;
-    }
+.metric-icon,
+.metric-value,
+.metric span {
+  position: relative;
+  z-index: 1;
+}
 
+.metric-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(38,39,82,0.10), rgba(0,145,126,0.14));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.metric-icon i {
+  width: 22px;
+  height: 22px;
+  color: var(--primary);
+}
+
+.metric-value {
+  margin-bottom: 10px;
+}
+
+.metric strong {
+  display: block;
+  font-size: clamp(30px, 3vw, 42px);
+  color: var(--primary);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.metric span {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #64748b;
+  font-weight: 700;
+  line-height: 1.6;
+}
+    
     .hero-card {
       position: relative;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.88));
@@ -2520,21 +2566,37 @@
     <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20konsultasi%20kebutuhan%20pelatihan." target="_blank" class="btn btn-outline">Konsultasi</a>
   </div>
 
-        <div class="hero-metrics">
-          <div class="metric">
-            <strong>5000+</strong>
-            <span>Peserta Belajar</span>
-          </div>
-          <div class="metric">
-            <strong>62+</strong>
-            <span>Batch Program</span>
-          </div>
-          <div class="metric">
-            <strong>2+</strong>
-            <span>Tahun Pertumbuhan</span>
-          </div>
-        </div>
-      </div>
+       <div class="hero-metrics" id="heroMetrics">
+  <div class="metric">
+    <div class="metric-icon">
+      <i data-lucide="users"></i>
+    </div>
+    <div class="metric-value">
+      <strong class="count-up" data-target="5000" data-suffix="+">0</strong>
+    </div>
+    <span>Peserta Belajar</span>
+  </div>
+
+  <div class="metric">
+    <div class="metric-icon">
+      <i data-lucide="layers-3"></i>
+    </div>
+    <div class="metric-value">
+      <strong class="count-up" data-target="62" data-suffix="+">0</strong>
+    </div>
+    <span>Batch Program</span>
+  </div>
+
+  <div class="metric">
+    <div class="metric-icon">
+      <i data-lucide="trending-up"></i>
+    </div>
+    <div class="metric-value">
+      <strong class="count-up" data-target="2" data-suffix="+">0</strong>
+    </div>
+    <span>Tahun Pertumbuhan</span>
+  </div>
+</div>
 
       <div class="hero-card">
         <div class="hero-slider" id="heroSlider">
@@ -3310,6 +3372,48 @@
       startHeroAutoSlide();
     }
 
+    function animateCountUp(el) {
+  const target = parseInt(el.dataset.target || "0", 10);
+  const suffix = el.dataset.suffix || "";
+  const duration = 1400;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const currentValue = Math.floor(target * eased);
+
+    el.textContent = currentValue.toLocaleString('id-ID') + suffix;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = target.toLocaleString('id-ID') + suffix;
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+const heroMetrics = document.getElementById('heroMetrics');
+const counters = document.querySelectorAll('.count-up');
+let hasAnimatedMetrics = false;
+
+if (heroMetrics && counters.length > 0) {
+  const metricObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimatedMetrics) {
+        hasAnimatedMetrics = true;
+        counters.forEach(counter => animateCountUp(counter));
+        metricObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  metricObserver.observe(heroMetrics);
+}
+    
     if (window.lucide) {
       lucide.createIcons();
     }
