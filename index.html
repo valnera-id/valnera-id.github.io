@@ -1809,20 +1809,63 @@
 }
 
 .story-mini {
-  padding: 22px;
+  position: relative;
+  padding: 28px 24px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.story-mini::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.78) 0%,
+    rgba(15, 23, 42, 0.42) 45%,
+    rgba(15, 23, 42, 0.18) 100%
+  );
+  z-index: 1;
+}
+
+.story-mini strong,
+.story-mini p {
+  position: relative;
+  z-index: 2;
 }
 
 .story-mini strong {
   display: block;
-  font-size: 15px;
-  color: var(--primary);
-  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: 800;
 }
 
 .story-mini p {
   font-size: 14px;
-  line-height: 1.75;
-  color: var(--muted);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+  max-width: 32ch;
+}
+
+.story-mini-individu {
+  background-image: url ('https://www.pexels.com/photo/professional-working-on-laptop-in-modern-office-30612694/');
+}
+
+.story-mini-tim {
+  background-image: url ('https://www.pexels.com/photo/three-business-people-looking-at-laptop-on-the-table-8133855/');
+}
+
+.story-mini-institusi {
+  background-image:url ('https://www.pexels.com/photo/business-training-course-18999475/');
 }
 
 @media (max-width: 1080px) {
@@ -2731,17 +2774,17 @@
     </div>
 
     <div class="story-mini-grid">
-      <div class="story-mini">
+      <div class="story-mini story-mini-individu">
         <strong>Untuk Individu</strong>
         <p>Membantu peserta meningkatkan kompetensi yang relevan dengan kebutuhan karier dan tantangan kerja modern.</p>
       </div>
 
-      <div class="story-mini">
+      <div class="story-mini story-mini-tim">
         <strong>Untuk Tim</strong>
         <p>Mendukung pengembangan kapabilitas bersama agar tim bekerja lebih efektif, terstruktur, dan siap beradaptasi.</p>
       </div>
 
-      <div class="story-mini">
+      <div class="story-mini story-mini-institusi">
         <strong>Untuk Institusi</strong>
         <p>Memberikan solusi pembelajaran yang lebih strategis untuk peningkatan kualitas SDM dan performa organisasi.</p>
       </div>
