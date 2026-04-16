@@ -1158,9 +1158,9 @@
   }
 }
 
-  .schedule-section {
-  background: linear-gradient(135deg, #262752 0%, #1f4f72 58%, #00917e 100%);
-  padding: 72px 0;
+ .schedule-section {
+  background: linear-gradient(180deg, #1f2b63 0%, #162e68 55%, #13305f 100%);
+  padding: 82px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1168,7 +1168,7 @@
 .schedule-section::before {
   content: "";
   position: absolute;
-  top: -120px;
+  top: -140px;
   left: -100px;
   width: 280px;
   height: 280px;
@@ -1179,8 +1179,8 @@
 .schedule-section::after {
   content: "";
   position: absolute;
-  bottom: -140px;
-  right: -90px;
+  bottom: -160px;
+  right: -120px;
   width: 320px;
   height: 320px;
   border-radius: 50%;
@@ -1190,22 +1190,22 @@
 .schedule-head {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 28px;
+  margin: 0 auto 26px;
   position: relative;
   z-index: 1;
 }
 
 .schedule-head .eyebrow {
-  color: #d7fff8;
-  margin-bottom: 12px;
+  color: #ffd37a;
+  margin-bottom: 10px;
 }
 
 .schedule-head h2 {
-  font-size: clamp(28px, 2.5vw, 42px);
+  font-size: clamp(30px, 2.8vw, 42px);
   line-height: 1.12;
   color: #ffffff;
   font-weight: 800;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   letter-spacing: -0.02em;
 }
 
@@ -1217,127 +1217,240 @@
   margin: 0 auto;
 }
 
-.schedule-card {
+.schedule-shell {
   position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
   z-index: 1;
-  background: #ffffff;
-  border-radius: 30px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+}
+
+.schedule-spiral {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 160px);
+  height: 42px;
+  background:
+    radial-gradient(circle at 12px 20px, rgba(0,0,0,0.35) 0 4px, transparent 5px),
+    radial-gradient(circle at 12px 20px, #d8dbe2 0 8px, transparent 9px);
+  background-size: 34px 42px;
+  background-repeat: repeat-x;
+  pointer-events: none;
+}
+
+.schedule-card {
+  background: #f7f8fb;
+  border-radius: 34px;
+  box-shadow: 0 28px 70px rgba(7, 15, 40, 0.28);
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
-.schedule-table {
+.schedule-topbar {
   display: grid;
-}
-
-.schedule-row {
-  display: grid;
-  grid-template-columns: 220px 1fr 170px 160px;
-  gap: 0;
+  grid-template-columns: 240px 1fr;
   align-items: center;
-  border-bottom: 1px solid #e8edf4;
+  border-bottom: 1px solid #dfe4eb;
+  background: #f7f8fb;
 }
 
-.schedule-row:last-child {
+.schedule-topbar-left,
+.schedule-topbar-right {
+  padding: 28px 30px;
+}
+
+.schedule-topbar-left {
+  border-right: 1px solid #dfe4eb;
+}
+
+.schedule-topbar-left h3,
+.schedule-topbar-right h3 {
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--primary);
+  font-weight: 800;
+  margin: 0;
+}
+
+.schedule-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.schedule-top-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #2448a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.schedule-top-icon i {
+  width: 26px;
+  height: 26px;
+}
+
+.schedule-list {
+  display: grid;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 240px 1fr 170px;
+  align-items: stretch;
+  border-bottom: 1px solid #dfe4eb;
+}
+
+.schedule-item:last-child {
   border-bottom: none;
 }
 
-.schedule-col {
-  padding: 22px 24px;
+.schedule-date,
+.schedule-info,
+.schedule-cta {
+  padding: 28px 30px;
 }
 
-.schedule-row.header {
-  background: #f7faff;
-}
-
-.schedule-row.header .schedule-col {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 800;
-  color: #64748b;
+.schedule-date {
+  border-right: 1px solid #dfe4eb;
 }
 
 .schedule-date strong {
   display: block;
-  font-size: 17px;
-  line-height: 1.4;
-  color: var(--primary);
+  font-size: 18px;
+  line-height: 1.45;
+  color: #ff8a00;
   font-weight: 800;
+  margin-bottom: 10px;
 }
 
 .schedule-date span {
   display: block;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 4px;
+  font-size: 14px;
+  color: #2e3b63;
+  font-weight: 600;
 }
 
-.schedule-class h3 {
-  font-size: 18px;
+.schedule-info h4 {
+  font-size: 22px;
   line-height: 1.35;
-  color: var(--ink);
+  color: #172b8a;
   font-weight: 800;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.schedule-class p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--muted);
+.schedule-info p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #f26a21;
+  font-weight: 600;
 }
 
-.schedule-type {
-  font-size: 14px;
-  font-weight: 700;
-  color: #334155;
-}
-
-.schedule-badge {
-  display: inline-flex;
+.schedule-cta {
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 9px 14px;
+}
+
+.schedule-pill {
+  width: 92px;
+  height: 92px;
   border-radius: 999px;
-  background: rgba(0, 145, 126, 0.10);
-  color: var(--secondary);
-  font-size: 12px;
+  background: linear-gradient(180deg, #ff5b2e 0%, #ff8a00 100%);
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.2;
   font-weight: 800;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.schedule-actions {
-  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 14px;
+  box-shadow: 0 14px 24px rgba(255, 122, 0, 0.28);
 }
 
-.schedule-actions .btn {
-  width: 100%;
+.schedule-bottom-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
 }
 
-@media (max-width: 1080px) {
-  .schedule-row {
+.schedule-bottom-actions .btn {
+  min-width: 220px;
+}
+
+@media (max-width: 980px) {
+  .schedule-spiral {
+    width: calc(100% - 60px);
+  }
+
+  .schedule-topbar,
+  .schedule-item {
     grid-template-columns: 1fr;
   }
 
-  .schedule-row.header {
-    display: none;
+  .schedule-topbar-left,
+  .schedule-date {
+    border-right: none;
+    border-bottom: 1px solid #dfe4eb;
   }
 
-  .schedule-col,
-  .schedule-actions {
-    padding: 16px 20px;
+  .schedule-cta {
+    justify-content: flex-start;
+    padding-top: 0;
   }
 
-  .schedule-type,
-  .schedule-actions {
-    text-align: left;
-  }
-
-  .schedule-actions .btn {
+  .schedule-pill {
     width: auto;
+    height: auto;
+    border-radius: 999px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 64px 0;
+  }
+
+  .schedule-spiral {
+    top: -18px;
+    height: 30px;
+    width: calc(100% - 40px);
+    background:
+      radial-gradient(circle at 10px 14px, rgba(0,0,0,0.35) 0 3px, transparent 4px),
+      radial-gradient(circle at 10px 14px, #d8dbe2 0 6px, transparent 7px);
+    background-size: 24px 30px;
+    background-repeat: repeat-x;
+  }
+
+  .schedule-card {
+    border-radius: 24px;
+  }
+
+  .schedule-topbar-left,
+  .schedule-topbar-right,
+  .schedule-date,
+  .schedule-info,
+  .schedule-cta {
+    padding: 20px;
+  }
+
+  .schedule-info h4 {
+    font-size: 19px;
+  }
+
+  .schedule-date strong {
+    font-size: 17px;
   }
 }
     .why-grid {
@@ -2854,69 +2967,80 @@
       <span class="eyebrow">Jadwal Kelas</span>
       <h2>Informasi kelas Valnera</h2>
       <p>
-        Temukan program yang paling sesuai dengan kebutuhan Anda.Untuk informasi jadwal lainnya,silakan hubungi tim valnera melalui kontak tang tersedia.
+        Temukan program yang paling sesuai dengan kebutuhan Anda. Untuk informasi jadwal terbaru, silakan hubungi tim Valnera melalui kontak yang tersedia.
       </p>
     </div>
 
-    <div class="schedule-card">
-      <div class="schedule-table">
-        <div class="schedule-row header">
-          <div class="schedule-col">Jadwal Kelas</div>
-          <div class="schedule-col">Program</div>
-          <div class="schedule-col">Tipe Kelas</div>
-          <div class="schedule-col">Aksi</div>
-        </div>
+    <div class="schedule-shell">
+      <div class="schedule-spiral"></div>
 
-        <div class="schedule-row">
-          <div class="schedule-col schedule-date">
-            <strong>18 April 2026</strong>
-            <span>Pendaftaran tersedia</span>
+      <div class="schedule-card">
+        <div class="schedule-topbar">
+          <div class="schedule-topbar-left">
+            <h3>Jadwal Kelas</h3>
           </div>
-          <div class="schedule-col schedule-class">
-            <h3>AI Powerpoint mastery</h3>
-            <p>Pembeljaraan,pemanfaatan AI untuk membantu kita meringankan pekerjaan seperti PPT dan lainnya</p>
-          </div>
-          <div class="schedule-col schedule-type">
-            <span class="schedule-badge">Webinar</span>
-          </div>
-          <div class="schedule-actions">
-            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20daftar%20kelas%20AI%20PowerPoint." target="_blank" class="btn btn-primary">Daftar</a>
+
+          <div class="schedule-topbar-right">
+            <div class="schedule-top-icon">
+              <i data-lucide="calendar-clock"></i>
+            </div>
+            <h3>Program Terdekat</h3>
           </div>
         </div>
 
-        <div class="schedule-row">
-          <div class="schedule-col schedule-date">
-            <strong>18 April 2026</strong>
-            <span>Pendaftaran dibuka</span>
-          </div>
-          <div class="schedule-col schedule-class">
-            <h3>Short Class PowerBI</h3>
-            <p>Ubah data excel menjadi dashboard yang mengagumkan dengan power bi</p>
-          </div>
-          <div class="schedule-col schedule-type">
-            <span class="schedule-badge">Webinar</span>
-          </div>
-          <div class="schedule-actions">
-            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20daftar%20kelas%20Power%20BI." target="_blank" class="btn btn-primary">Daftar</a>
-          </div>
-        </div>
+        <div class="schedule-list">
+          <div class="schedule-item">
+            <div class="schedule-date">
+              <strong>Segera Dibuka</strong>
+              <span>Open Class</span>
+            </div>
 
-        <div class="schedule-row">
-          <div class="schedule-col schedule-date">
-            <strong>26 April 2026</strong>
-            <span>Pendaftaran dibuka</span>
+            <div class="schedule-info">
+              <h4>AI PowerPoint</h4>
+              <p>Informasi jadwal terbaru tersedia melalui konsultasi dengan tim Valnera.</p>
+            </div>
+
+            <div class="schedule-cta">
+              <div class="schedule-pill">Tanya Jadwal</div>
+            </div>
           </div>
-          <div class="schedule-col schedule-class">
-            <h3>AI PPT for HRD</h3>
-            <p>Kelas untuk meningkatkan efisiensi kerja melalui formula, reporting, dan pengolahan resorche dengan bantuan AI</p>
+
+          <div class="schedule-item">
+            <div class="schedule-date">
+              <strong>Segera Dibuka</strong>
+              <span>Open Class</span>
+            </div>
+
+            <div class="schedule-info">
+              <h4>Power BI</h4>
+              <p>Informasi jadwal terbaru tersedia melalui konsultasi dengan tim Valnera.</p>
+            </div>
+
+            <div class="schedule-cta">
+              <div class="schedule-pill">Tanya Jadwal</div>
+            </div>
           </div>
-          <div class="schedule-col schedule-type">
-            <span class="schedule-badge">Webinar</span>
-          </div>
-          <div class="schedule-actions">
-            <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20daftar%20kelas%20Excel." target="_blank" class="btn btn-primary">Daftar</a>
+
+          <div class="schedule-item">
+            <div class="schedule-date">
+              <strong>Segera Dibuka</strong>
+              <span>Open Class</span>
+            </div>
+
+            <div class="schedule-info">
+              <h4>Excel</h4>
+              <p>Informasi jadwal terbaru tersedia melalui konsultasi dengan tim Valnera.</p>
+            </div>
+
+            <div class="schedule-cta">
+              <div class="schedule-pill">Tanya Jadwal</div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="schedule-bottom-actions">
+        <a href="https://wa.me/6285179893852?text=Halo%20Valnera,%20saya%20ingin%20mengetahui%20jadwal%20kelas%20terbaru." target="_blank" class="btn btn-secondary">Hubungi untuk Jadwal Terbaru</a>
       </div>
     </div>
   </div>
