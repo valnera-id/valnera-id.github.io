@@ -452,6 +452,32 @@
       color: #fff;
     }
 
+    .hero-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.48),
+    rgba(15, 23, 42, 0.18)
+  );
+  z-index: 1;
+}
+
+.hero-slide-panel {
+  position: relative;
+  z-index: 2;
+}
+
     .hero-slide.active {
       opacity: 1;
       z-index: 1;
@@ -2039,6 +2065,7 @@
         <div class="hero-card">
           <div class="hero-slider" aria-label="Highlight program">
             <div class="hero-slide slide-a active">
+              <img src="slide-1.png" alt="gambar 1" />
               <div class="hero-slide-panel">
                 <span class="label">Featured focus</span>
                 <h3>AI PowerPoint untuk presentasi yang lebih cepat dan lebih tajam</h3>
@@ -2050,6 +2077,7 @@
             </div>
 
             <div class="hero-slide slide-b">
+               <img src="slide-2.png" alt="gambar 2" />
               <div class="hero-slide-panel">
                 <span class="label">Featured focus</span>
                 <h3>Power BI untuk insight yang lebih jelas dan keputusan yang lebih kuat</h3>
@@ -2061,6 +2089,7 @@
             </div>
 
             <div class="hero-slide slide-c">
+               <img src="slide-3.png" alt="gambar 3" />
               <div class="hero-slide-panel">
                 <span class="label">Featured focus</span>
                 <h3>Corporate learning yang dapat disesuaikan untuk kebutuhan tim</h3>
