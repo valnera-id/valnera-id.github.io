@@ -647,6 +647,127 @@
       line-height: 1.45;
     }
 
+    /* PARTNER MARQUEE */
+    .partner-strip {
+      padding: 34px 0 12px;
+      background: #fff;
+    }
+
+    .partner-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .partner-head h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .partner-head p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+
+    .partner-marquee {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      background:
+        linear-gradient(180deg, #fcfdff 0%, #f8fbfd 100%);
+    }
+
+    .partner-marquee::before,
+    .partner-marquee::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 90px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .partner-marquee::before {
+      left: 0;
+      background: linear-gradient(to right, #ffffff 5%, rgba(255,255,255,0));
+    }
+
+    .partner-marquee::after {
+      right: 0;
+      background: linear-gradient(to left, #ffffff 5%, rgba(255,255,255,0));
+    }
+
+    .partner-track {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      width: max-content;
+      animation: partnerScroll 28s linear infinite;
+      padding: 18px 0;
+    }
+
+    .partner-marquee:hover .partner-track {
+      animation-play-state: paused;
+    }
+
+    .partner-item {
+      min-width: 190px;
+      min-height: 76px;
+      border-radius: 20px;
+      border: 1px solid #e7edf4;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .partner-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(38, 39, 82, 0.06);
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .partner-badge svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .partner-copy strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .partner-copy span {
+      display: block;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    @keyframes partnerScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     /* ABOUT */
     .about {
       background:
@@ -1256,54 +1377,109 @@
       background: rgba(255,255,255,0.2);
     }
 
-    /* SCHEDULE */
+    /* ENHANCED SCHEDULE */
     .schedule-section {
-      background: #fff;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
     }
 
     .schedule-shell {
       position: relative;
     }
 
+    .schedule-shell::before {
+      content: "";
+      position: absolute;
+      inset: -18px 40px auto auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(0, 145, 126, 0.06);
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
     .schedule-card {
       position: relative;
-      border: 1px solid var(--line-soft);
-      border-radius: 28px;
       overflow: hidden;
-      background: #fff;
-      box-shadow: var(--shadow-sm);
+      border: 1px solid #e5edf4;
+      border-radius: 30px;
+      background: #ffffff;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+    }
+
+    .schedule-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, #262752 0%, #00917e 100%);
     }
 
     .schedule-topbar {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 18px;
-      padding: 20px 22px;
-      border-bottom: 1px solid var(--line-soft);
-      background: linear-gradient(180deg, #fcfdff 0%, #f8fbfd 100%);
+      gap: 22px;
+      padding: 24px 24px 22px;
+      border-bottom: 1px solid #edf2f7;
+      background:
+        radial-gradient(circle at top right, rgba(0, 145, 126, 0.08), transparent 22%),
+        linear-gradient(180deg, #fbfdff 0%, #f7fafc 100%);
     }
 
-    .schedule-topbar h3 {
+    .schedule-topbar-left small {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    .schedule-topbar-left h3 {
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .schedule-topbar-left p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 54ch;
+    }
+
+    .schedule-topbar-right {
+      display: inline-flex;
+      align-items: center;
+      align-self: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid #e8eef5;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+      color: var(--primary);
+    }
+
+    .schedule-topbar-right h3 {
       font-size: 16px;
       line-height: 1.35;
       color: var(--ink);
       font-weight: 700;
     }
 
-    .schedule-topbar-right {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--primary);
-    }
-
     .schedule-top-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
-      background: rgba(38,39,82,0.06);
+      background: rgba(38, 39, 82, 0.06);
     }
 
     .schedule-top-icon svg {
@@ -1316,12 +1492,18 @@
     }
 
     .schedule-item {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 16px;
-      padding: 20px 22px;
-      border-top: 1px solid var(--line-soft);
+      gap: 20px;
+      padding: 24px;
+      border-top: 1px solid #edf2f7;
+      transition: background 0.22s ease;
       align-items: center;
+    }
+
+    .schedule-item:hover {
+      background: #fbfdff;
     }
 
     .schedule-item:first-child {
@@ -1330,58 +1512,92 @@
 
     .schedule-main-link {
       display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 18px;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
       align-items: start;
+    }
+
+    .schedule-date {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .schedule-date::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      bottom: 2px;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #262752 0%, #00917e 100%);
     }
 
     .schedule-date strong {
       display: block;
       font-size: 15px;
+      line-height: 1.4;
       color: var(--ink);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
     .schedule-date span {
       display: inline-flex;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(0,145,126,0.08);
-      color: var(--secondary-deep);
+      padding: 7px 11px;
       font-size: 11px;
-      font-weight: 700;
+      border-radius: 999px;
+      background: rgba(0, 145, 126, 0.08);
+      color: var(--secondary-deep);
+      font-weight: 800;
+      letter-spacing: 0.04em;
     }
 
     .schedule-info h4 {
-      font-size: 18px;
-      line-height: 1.3;
+      font-size: 19px;
+      line-height: 1.25;
       color: var(--primary);
-      margin-bottom: 6px;
+      margin-bottom: 7px;
+      letter-spacing: -0.01em;
     }
 
     .schedule-info p {
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.75;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 62ch;
+    }
+
+    .schedule-cta {
+      display: flex;
+      align-items: center;
     }
 
     .schedule-pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 0 16px;
+      min-height: 44px;
+      padding: 0 18px;
       border-radius: 999px;
-      background: var(--primary);
+      background: linear-gradient(135deg, #262752 0%, #233d63 100%);
       color: #fff;
       font-size: 12px;
       font-weight: 700;
+      box-shadow: 0 12px 28px rgba(38, 39, 82, 0.12);
       transition: 0.2s ease;
     }
 
     .schedule-pill:hover {
-      background: var(--primary-deep);
+      background: linear-gradient(135deg, #1e1f42 0%, #1f3758 100%);
+    }
+
+    .schedule-note {
+      padding: 18px 24px 24px;
+      border-top: 1px solid #edf2f7;
+      background: #fcfefe;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--muted);
     }
 
     /* CONTACT */
@@ -1655,18 +1871,39 @@
         grid-template-columns: 1fr;
       }
 
+      .partner-head {
+        margin-bottom: 14px;
+      }
+
+      .partner-item {
+        min-width: 170px;
+      }
+
       .schedule-topbar,
       .schedule-item,
       .schedule-main-link {
         grid-template-columns: 1fr;
       }
 
-      .schedule-cta {
+      .schedule-topbar-right {
+        justify-self: start;
+      }
+
+      .schedule-main-link {
+        gap: 16px;
+      }
+
+      .schedule-date {
+        padding-left: 14px;
+      }
+
+      .schedule-cta,
+      .schedule-pill {
         width: 100%;
       }
 
-      .schedule-pill {
-        width: 100%;
+      .schedule-shell::before {
+        display: none;
       }
 
       .testimonial-card {
@@ -1908,6 +2145,121 @@
         <div class="trust-item">
           <i data-lucide="briefcase-business"></i>
           <span>Corporate Training</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner-strip" aria-label="Area partner dan fokus pembelajaran">
+    <div class="container">
+      <div class="partner-head">
+        <div>
+          <div class="eyebrow">Learning ecosystem</div>
+          <h3>Dirancang untuk kebutuhan profesional modern</h3>
+        </div>
+        <p>
+          Area ini memberi nuansa visual yang lebih hidup sambil tetap menjaga tampilan
+          agar profesional, tenang, dan tidak berlebihan.
+        </p>
+      </div>
+    </div>
+
+    <div class="partner-marquee">
+      <div class="partner-track">
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="presentation"></i></div>
+          <div class="partner-copy">
+            <strong>AI PowerPoint</strong>
+            <span>Presentation workflow</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="bar-chart-3"></i></div>
+          <div class="partner-copy">
+            <strong>Power BI</strong>
+            <span>Data & dashboard skills</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="table-properties"></i></div>
+          <div class="partner-copy">
+            <strong>Excel</strong>
+            <span>Productivity & analysis</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="briefcase-business"></i></div>
+          <div class="partner-copy">
+            <strong>Corporate Training</strong>
+            <span>Team capability building</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="brain-circuit"></i></div>
+          <div class="partner-copy">
+            <strong>AI Readiness</strong>
+            <span>Modern professional learning</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="graduation-cap"></i></div>
+          <div class="partner-copy">
+            <strong>Executive Learning</strong>
+            <span>Strategic capability</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="presentation"></i></div>
+          <div class="partner-copy">
+            <strong>AI PowerPoint</strong>
+            <span>Presentation workflow</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="bar-chart-3"></i></div>
+          <div class="partner-copy">
+            <strong>Power BI</strong>
+            <span>Data & dashboard skills</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="table-properties"></i></div>
+          <div class="partner-copy">
+            <strong>Excel</strong>
+            <span>Productivity & analysis</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="briefcase-business"></i></div>
+          <div class="partner-copy">
+            <strong>Corporate Training</strong>
+            <span>Team capability building</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="brain-circuit"></i></div>
+          <div class="partner-copy">
+            <strong>AI Readiness</strong>
+            <span>Modern professional learning</span>
+          </div>
+        </div>
+
+        <div class="partner-item">
+          <div class="partner-badge"><i data-lucide="graduation-cap"></i></div>
+          <div class="partner-copy">
+            <strong>Executive Learning</strong>
+            <span>Strategic capability</span>
+          </div>
         </div>
       </div>
     </div>
@@ -2353,7 +2705,7 @@
         <h2 class="section-title">Informasi kelas Valnera</h2>
         <p class="section-desc">
           Temukan program yang paling sesuai dengan kebutuhan Anda. Untuk informasi jadwal
-          terbaru, silakan hubungi tim Valnera melalui kontak yang tersedia.
+          terbaru, Anda dapat langsung menghubungi tim Valnera.
         </p>
       </div>
 
@@ -2361,14 +2713,19 @@
         <div class="schedule-card">
           <div class="schedule-topbar">
             <div class="schedule-topbar-left">
-              <h3>Jadwal Kelas</h3>
+              <small>Upcoming learning</small>
+              <h3>Program terdekat & format pembelajaran</h3>
+              <p>
+                Valnera menyediakan open class, private class, dan pelatihan berbasis kebutuhan
+                untuk individu, tim, maupun institusi.
+              </p>
             </div>
 
             <div class="schedule-topbar-right">
               <div class="schedule-top-icon">
                 <i data-lucide="calendar-clock"></i>
               </div>
-              <h3>Program Terdekat</h3>
+              <h3>Flexible Schedule</h3>
             </div>
           </div>
 
@@ -2387,7 +2744,8 @@
                 <div class="schedule-info">
                   <h4>AI PowerPoint</h4>
                   <p>
-                    Informasi jadwal terbaru tersedia melalui konsultasi dengan tim Valnera.
+                    Program untuk membantu peserta menyusun presentasi yang lebih cepat,
+                    rapi, dan relevan dengan memanfaatkan AI secara lebih efektif.
                   </p>
                 </div>
               </a>
@@ -2418,8 +2776,8 @@
                 <div class="schedule-info">
                   <h4>Power BI</h4>
                   <p>
-                    Untuk kebutuhan private class maupun pelatihan tim, jadwal dapat
-                    disesuaikan dengan kebutuhan peserta atau organisasi.
+                    Kelas dapat disesuaikan untuk kebutuhan pembelajaran individu, private class,
+                    maupun pengembangan kapabilitas tim di lingkungan kerja.
                   </p>
                 </div>
               </a>
@@ -2450,8 +2808,8 @@
                 <div class="schedule-info">
                   <h4>Excel & Corporate Learning</h4>
                   <p>
-                    Diskusikan kebutuhan program Anda bersama tim Valnera untuk menentukan
-                    format pembelajaran yang paling sesuai.
+                    Untuk kebutuhan pelatihan yang lebih kontekstual, format, jadwal, dan materi
+                    dapat disusun bersama tim Valnera sesuai kebutuhan peserta atau organisasi.
                   </p>
                 </div>
               </a>
@@ -2467,6 +2825,11 @@
                 </a>
               </div>
             </div>
+          </div>
+
+          <div class="schedule-note">
+            Untuk jadwal terbaru atau kebutuhan kelas khusus, silakan hubungi tim Valnera agar
+            kami dapat merekomendasikan format pembelajaran yang paling sesuai.
           </div>
         </div>
       </div>
