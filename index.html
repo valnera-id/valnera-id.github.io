@@ -537,12 +537,16 @@
     }
 
 
-    #about {
-  padding: 56px 0;
+  #about {
+  padding: 34px 0 42px;
+}
+
+#about .eyebrow {
+  margin-bottom: 12px;
 }
 
 .about-carousel {
-  margin-top: 18px;
+  margin-top: 8px;
 }
 
 .about-track {
@@ -551,8 +555,8 @@
 
 .about-slide {
   display: none;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 28px;
+  grid-template-columns: 0.78fr 0.92fr;
+  gap: 18px;
   align-items: center;
 }
 
@@ -561,43 +565,47 @@
 }
 
 .about-slide-copy {
-  padding-right: 8px;
+  padding-right: 0;
+  max-width: 430px;
 }
 
 .about-slide-copy h2 {
-  font-size: clamp(34px, 4vw, 58px);
-  line-height: 1.05;
+  font-size: clamp(22px, 2.8vw, 34px);
+  line-height: 1.08;
   color: var(--ink);
   font-weight: 800;
-  margin-bottom: 18px;
-  max-width: 10ch;
+  margin-bottom: 12px;
+  max-width: 8ch;
 }
 
 .about-slide-copy h3 {
-  font-size: clamp(20px, 2vw, 30px);
-  line-height: 1.18;
+  font-size: clamp(16px, 1.5vw, 22px);
+  line-height: 1.2;
   color: var(--ink);
   font-weight: 800;
-  margin-top: 18px;
-  margin-bottom: 12px;
-  max-width: 15ch;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  max-width: 14ch;
 }
 
 .about-slide-copy p {
-  font-size: 15px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 1.8;
   color: #52657d;
-  max-width: 48ch;
+  max-width: 36ch;
   margin-bottom: 0;
 }
 
 .about-slide-visual {
   position: relative;
-  min-height: 420px;
-  border-radius: 24px;
+  width: 100%;
+  max-width: 560px;
+  min-height: 290px;
+  border-radius: 18px;
   overflow: hidden;
   background: #eef3f8;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  justify-self: end;
 }
 
 .about-slide-visual img {
@@ -608,20 +616,20 @@
 }
 
 .about-controls {
-  margin-top: 20px;
+  margin-top: 14px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .about-btn {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border: 1px solid #dbe4ec;
   border-radius: 999px;
   background: #ffffff;
   color: var(--primary);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 800;
   cursor: pointer;
   transition: 0.25s ease;
@@ -634,12 +642,12 @@
 .about-dots {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .about-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border: none;
   border-radius: 999px;
   background: #cbd5e1;
@@ -648,38 +656,50 @@
 }
 
 .about-dot.active {
-  width: 28px;
+  width: 22px;
   background: var(--primary);
 }
 
 @media (max-width: 980px) {
+  #about {
+    padding: 28px 0 36px;
+  }
+
   .about-slide {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 14px;
   }
 
   .about-slide-copy {
-    padding-right: 0;
+    max-width: none;
   }
 
   .about-slide-copy h2 {
-    font-size: clamp(28px, 8vw, 42px);
+    font-size: clamp(24px, 8vw, 34px);
     max-width: none;
+    margin-bottom: 10px;
   }
 
   .about-slide-copy h3 {
-    font-size: 22px;
+    font-size: 18px;
     max-width: none;
+    margin-top: 12px;
   }
 
   .about-slide-copy p {
     max-width: none;
     font-size: 14px;
-    line-height: 1.8;
+    line-height: 1.75;
   }
 
   .about-slide-visual {
-    min-height: 240px;
+    max-width: none;
+    min-height: 220px;
+    justify-self: stretch;
+  }
+
+  .about-controls {
+    margin-top: 12px;
   }
 }
     
@@ -2572,7 +2592,7 @@
             </p>
             <h3>Pembelajaran yang modern, strategis, dan relevan</h3>
             <p>
-              Setiap program Valnera dirancang agar tidak berhenti pada penguasaan tools, tetapi membantu peserta menerjemahkan skill menjadi kualitas kerja, keputusan, dan dampak yang lebih nyata.
+              Setiap program Valnera dirancang agar tidak berhenti di tools.
             </p>
           </div>
           <div class="about-slide-visual">
