@@ -537,18 +537,17 @@
     }
 
 /* ABOUT */
- .about-clean {
+.about-clean {
   position: relative;
   padding: 42px 0 48px;
   background:
-    radial-gradient(circle at top left, rgba(0, 145, 126, 0.05), transparent 24%),
-    linear-gradient(180deg, #f9fbfc 0%, #f4f7fa 100%);
+    linear-gradient(90deg, #edf4f6 0%, #f7f9fb 38%, #f7f9fb 100%);
 }
 
 .about-clean-wrap {
   display: grid;
-  grid-template-columns: 0.82fr 1.05fr;
-  gap: 26px;
+  grid-template-columns: 0.82fr 0.98fr;
+  gap: 24px;
   align-items: center;
 }
 
@@ -563,7 +562,7 @@
 }
 
 .about-clean-copy h2 {
-  font-size: clamp(22px, 2.6vw, 34px);
+  font-size: clamp(22px, 2.4vw, 34px);
   line-height: 1.08;
   font-weight: 800;
   color: var(--ink);
@@ -575,7 +574,7 @@
   font-size: 14px;
   line-height: 1.85;
   color: #5b6b7f;
-  max-width: 30ch;
+  max-width: 29ch;
 }
 
 .about-clean-visual {
@@ -583,22 +582,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 280px;
+  min-height: 250px;
+  max-width: 540px;
+  width: 100%;
+  margin-left: auto;
 }
 
 .about-clean-visual::before {
   content: "";
   position: absolute;
-  inset: 12px 0;
-  border-radius: 24px;
-  background: linear-gradient(180deg, #eef3f7 0%, #e9eff4 100%);
+  inset: 0;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(233, 239, 244, 0.95) 0%, rgba(228, 235, 241, 0.98) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+  z-index: 1;
+}
+
+.about-clean-visual::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: 22px;
+  top: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+  filter: blur(2px);
   z-index: 1;
 }
 
 .about-clean-visual img {
   position: relative;
   z-index: 2;
-  width: min(100%, 500px);
+  width: min(100%, 420px);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 14px 24px rgba(38, 39, 82, 0.10));
@@ -607,6 +624,7 @@
 @media (max-width: 980px) {
   .about-clean {
     padding: 34px 0 38px;
+    background: linear-gradient(180deg, #edf4f6 0%, #f7f9fb 100%);
   }
 
   .about-clean-wrap {
@@ -631,16 +649,12 @@
   }
 
   .about-clean-visual {
+    max-width: 100%;
     min-height: 220px;
   }
 
-  .about-clean-visual::before {
-    inset: 8px 0;
-    border-radius: 18px;
-  }
-
   .about-clean-visual img {
-    width: min(100%, 390px);
+    width: min(100%, 340px);
   }
 }
 
