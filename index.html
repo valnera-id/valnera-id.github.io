@@ -662,58 +662,58 @@
     
   .programs {
   background: #f4f8fb;
-  padding: 48px 0;
+  padding: 36px 0 42px;
 }
 
 .program-head {
-  max-width: 920px;
-  margin-bottom: 34px;
+  max-width: 620px;
+  margin-bottom: 22px;
 }
 
 .program-head .eyebrow {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .program-head h2 {
-  font-size: clamp(26px, 2.2vw, 34px);
-  line-height: 1.16;
+  font-size: clamp(24px, 2vw, 30px);
+  line-height: 1.14;
   color: var(--ink);
   font-weight: 800;
-  max-width: 13ch;
-  margin-bottom: 12px;
+  max-width: 9ch;
+  margin-bottom: 10px;
 }
 
 .program-head p {
-  font-size: 15px;
-  line-height: 1.85;
+  font-size: 14px;
+  line-height: 1.75;
   color: var(--muted);
-  max-width: 760px;
+  max-width: 34ch;
 }
 
 .program-stack {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .program-item {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 230px 1fr;
   background: #ffffff;
   border: 1px solid #e8edf3;
-  border-radius: 22px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
 }
 
 .program-side {
-  padding: 24px 22px;
+  padding: 20px 18px;
   border-right: 1px solid #e8edf3;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 250px;
+  min-height: 190px;
 }
 
 .program-side::before {
@@ -732,10 +732,10 @@
 .program-side::after {
   content: "";
   position: absolute;
-  top: -34px;
-  right: -18px;
-  width: 110px;
-  height: 110px;
+  top: -30px;
+  right: -16px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: rgba(255,255,255,0.10);
   z-index: 1;
@@ -750,7 +750,7 @@
 
 .program-badge {
   display: inline-flex;
-  padding: 7px 11px;
+  padding: 6px 10px;
   border-radius: 999px;
   background: rgba(255,255,255,0.16);
   color: #ffffff;
@@ -758,67 +758,96 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   backdrop-filter: blur(6px);
 }
 
 .program-title {
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.08;
   color: #ffffff;
   font-weight: 800;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 8px;
 }
 
 .program-subtitle {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.65;
   color: rgba(255,255,255,0.88);
-  max-width: 18ch;
+  max-width: 17ch;
+}
+
+.program-content {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.program-content p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.program-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.program-list li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #334155;
+  padding-left: 18px;
   position: relative;
-  z-index: 2;
 }
 
-.program-side-ai {
-  background-image: url('program-ai-powerpoint.jpg');
+.program-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--secondary);
 }
 
-.program-side-bi {
-  background-image: url('program-powerbi.jpg');
-}
-
-.program-side-excel {
-  background-image: url('program-excel.jpg');
+.program-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 @media (max-width: 980px) {
   .program-item {
     grid-template-columns: 1fr;
-    border-radius: 20px;
+    border-radius: 18px;
   }
 
   .program-side {
-    padding: 22px 20px;
-    min-height: 210px;
+    min-height: 180px;
     border-right: none;
     border-bottom: 1px solid #e8edf3;
   }
 
   .program-content {
-    padding: 20px;
+    padding: 18px;
   }
 
   .program-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .program-subtitle {
     max-width: none;
   }
 }
-
+    
 .testimonials {
   background: linear-gradient(135deg, #262752 0%, #1f4f72 58%, #00917e 100%);
   padding: 42px 0 58px;
@@ -2723,14 +2752,14 @@
   
   <section class="programs" id="programs">
   <div class="container">
-    <div class="program-head">
-      <span class="eyebrow">Main Programs</span>
-      <h2>Program unggulan untuk pembelajaran yang lebih strategis</h2>
-      <p>
-        Valnera menghadirkan program pelatihan yang dirancang untuk menjawab kebutuhan profesional modern, mulai dari presentasi berbasis AI, analisis data, hingga peningkatan produktivitas kerja. Setiap program disusun agar relevan, aplikatif, dan berdampak nyata dalam pekerjaan.
-      </p>
-    </div>
-
+   <div class="program-head">
+  <span class="eyebrow">Main Programs</span>
+  <h2>Program unggulan Valnera</h2>
+  <p>
+    Dirancang untuk kebutuhan kerja modern, lebih aplikatif, dan lebih relevan.
+  </p>
+</div>
+    
     <div class="program-stack">
       <article class="program-item">
         <div class="program-side program-side-ai">
@@ -2744,11 +2773,11 @@
         <div class="program-content">
           <div>
             <p>
-              Program ini membantu peserta memanfaatkan AI untuk menyusun presentasi yang tidak hanya menarik secara visual, tetapi juga lebih tajam dalam menyampaikan pesan, insight, dan arah komunikasi.
+              Membantu peserta membuat presentasi yang lebih cepat, lebih rapi, dan lebih kuat secara pesan dengan bantuan AI.
             </p>
 
             <ul class="program-list">
-              <li>Webinar reguler untuk kebutuhan upskilling cepat</li>
+              <li>Untuk webinar, class intensif, dan private session</li>
               <li>Premium class intensif dengan materi lebih mendalam</li>
               <li>Private class untuk kebutuhan individu atau tim</li>
             </ul>
@@ -2773,7 +2802,7 @@
         <div class="program-content">
           <div>
             <p>
-              Program Power BI dirancang untuk membantu peserta membangun kemampuan analisis, visualisasi, dan interpretasi data sehingga mampu menghasilkan dashboard yang lebih informatif dan berguna untuk pengambilan keputusan.
+              Dirancang untuk membantu peserta membangun dashboard yang jelas, informatif, dan berguna untuk pengambilan keputusan.
             </p>
 
             <ul class="program-list">
